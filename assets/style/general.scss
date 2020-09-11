@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Codec Pro News';
+  src: url('~@/assets/fonts/CodecPro-News.woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('~@/assets/fonts/CodecPro-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  font-family: Codec Pro News, serif;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1312px;
+}
+
+button {
+  padding: 0;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}

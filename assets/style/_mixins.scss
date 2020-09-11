@@ -1,0 +1,8 @@
+@mixin font() {
+  @font-face {
+    font-family: 'Codec Pro';
+    src: url('~@/assets/fonts/CodecPro-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+}

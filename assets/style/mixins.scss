@@ -1,0 +1,17 @@
+@mixin FontHeader {
+  font-style: normal;
+  font-weight: bold
+}
+
+
+@mixin FontSub {
+  font-style: normal;
+  font-weight: 300;
+}
+
+
+@mixin popup {
+  background: rgba(52, 79, 106, 0.32);
+  backdrop-filter: blur(32px);
+}
+
