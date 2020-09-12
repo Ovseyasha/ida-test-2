@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.filter">
-    <h2>Rent</h2>
-    <select v-model="selectedType" :class="$style.select">
+    <h2 :class="`${$style.header} ${dark ? 'lightText' : ''}`">Rent</h2>
+    <select v-model="selectedType" :class="$style.select" @change="updFilter">
       <option :class="$style.option" v-for="(type,index) in types" :key="index" :value="type">
         {{type}}
       </option>
@@ -11,7 +11,7 @@
 
 <script>
   export default {
-    name: 'Filter',
+    name: 'TypeFilter',
     data() {
       return {
         selectedType: '',
@@ -21,21 +21,39 @@
       types() {
         return this.$store.getters['vehicles/getTypes'];
       },
+      dark(){
+        return this.$store.getters.darkMode
+      }
     },
     mounted() {
       this.selectedType = this.types[0];
+      this.$store.dispatch('vehicles/setFilter', this.selectedType)
     },
+    methods: {
+      updFilter(){
+        this.$store.dispatch('vehicles/setFilter', this.selectedType)
+      }
+    }
   };
 </script>
 
 <style lang='scss' module>
   .filter {
-    font-weight: bold;
-    font-size: 40px;
-    line-height: 120%;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .header{
+      font-weight: bold;
+      font-size: 40px;
+      line-height: 120%;
+      color: $cDarkBlue;
+      transition: color .3s ease;
+
+      @include sm-block(){
+        font-size: 24px;
+      }
+    }
 
     .select {
       outline: none;
@@ -44,15 +62,16 @@
       border: none;
       background: none;
       font-weight: bold;
-      font-size: 50px;
+      font-size: 40px;
       line-height: 120%;
-
-
+      @include sm-block(){
+        padding-left: 10px;
+        font-size: 24px;
+      }
     }
 
     .option {
-      background: red;
-      font-size: 10px !important;
+      font-size: 15px;
     }
   }
 </style>

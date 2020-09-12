@@ -15,5 +15,8 @@
 <style lang='scss' module>
   .btn {
     padding-left: 30px;
+    @include md-block(){
+      padding-left: 16px;
+    }
   }
 </style>

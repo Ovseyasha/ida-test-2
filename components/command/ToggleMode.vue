@@ -1,8 +1,8 @@
 <template>
   <div>
-    <button :class="$style.button">
-      <img src="/img/toggle.svg">
-      <span></span>Night mod
+    <button :class="$style.button"  @click="toggle">
+      <img :class="$style.img" :src="dark ? '/img/day.svg' : '/img/toggle.svg'" >
+      <span :class="`${$style.text} ${dark ? 'lightText2' : ''}`">{{dark? 'Day mod' : 'Night mod'}}</span>
     </button>
   </div>
 </template>
@@ -10,6 +10,18 @@
 <script>
   export default {
     name: 'NavbarToggleMode',
+
+    computed: {
+      dark(){
+        return this.$store.getters.darkMode
+      }
+    },
+
+    methods: {
+      toggle(){
+        this.$store.dispatch('darkModeChange')
+      }
+    }
   };
 </script>
 
@@ -19,11 +31,27 @@
     justify-content: center;
     align-items: center;
 
-    img {
+    .img {
       margin-right: 16px;
+      @include md-block(){
+        margin-bottom: 5px;
+        margin-right: 0;
+
+      }
       font-weight: 300;
       font-size: 16px;
       line-height: 152%;
+    }
+
+    .text{
+      font-size: 16px;
+      line-height: 152%;
+      color: $cGrey1;
+      transition: color .3s ease;
+
+      @include md-block(){
+        display: none;
+      }
     }
   }
 </style>

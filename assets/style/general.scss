@@ -17,10 +17,17 @@
   margin: 0;
   padding: 0;
 }
-
+html,body{
+  height: 100%;
+  width: 100%;
+}
 .wrapper {
   margin: 0 auto;
   max-width: 1312px;
+}
+
+a{
+  text-decoration: none;
 }
 
 button {
@@ -29,4 +36,85 @@ button {
   outline: none;
   border: none;
   cursor: pointer;
+}
+
+input{
+  border-radius: $rInput;
+  padding: 21px 24px;
+  outline: none;
+  border: none;
+  background: $cLightGrey;
+  color: $cGrey1;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 14px;
+}
+
+// dark mode
+
+.darkBg1{
+  background: $cDarkBlue !important;
+}
+
+.darkBg2{
+  background: $dBg2 !important;
+}
+
+.lightText{
+  color: $cDarkWhite !important;
+}
+
+.lightText2{
+  color: $cGrey2 !important;
+}
+
+
+// animations
+
+.slide-enter-active{
+  opacity: 0;
+  transform: translateX(-15%);
+}
+
+.slide-enter-active, .slide-leave-active{
+  transition: opacity 0.3s ease, translateX 0.3s ease;
+}
+
+ .slide-leave-active{
+  opacity: 0;
+  transform: translateX(10%);
+}
+// add product
+
+.fade-enter-active{
+  transition: opacity 0.3s ease;
+}
+.fade-enter {
+  opacity: 0;
+}
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+.fade-leave-to{
+  opacity: 0;
+}
+
+.slide-right-enter-active{
+  transition: all 0.3s ease;
+  transform: translateX(100%);
+}
+.slide-right-enter{
+  opacity: 0;
+  transform: translateX(100%);
+}
+.slide-right-enter-to{
+  opacity: 1;
+  transform: translateX(0%);
+}
+.slide-right-leave-active{
+  transition: all 0.3s ease;
+}
+.slide-right-leave-to{
+  transform: translateX(100%);
 }
