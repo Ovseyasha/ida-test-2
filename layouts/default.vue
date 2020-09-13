@@ -4,7 +4,9 @@
       <Navbar/>
     </div>
     <div :class="$style.content">
-      <Nuxt/>
+      <transition appear mode="out-in" name="fade">
+        <Nuxt/>
+      </transition>
     </div>
   </div>
 </template>

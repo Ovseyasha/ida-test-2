@@ -25,7 +25,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    '@/plugins/filters'
+    '@/plugins/filters',
+    '@/plugins/directives'
   ],
   /*
   ** Auto import components

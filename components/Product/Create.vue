@@ -19,9 +19,30 @@
           </div>
           <form :class="$style.form" @submit.prevent="create">
             <AddPhoto @changed-img="setImg" :class="$style.changeImg"  />
-            <input type="text" :class="`${$style.input} ${dark ? 'darkBg2 lightText' : ''}`" v-model="name" placeholder="Name">
-            <input type="text" :class="`${$style.input} ${dark ? 'darkBg2 lightText' : ''}`" v-model="desc" placeholder="Description">
-            <input type="text" :class="`${$style.input} ${dark ? 'darkBg2 lightText' : ''}`" v-model="price" placeholder="Rent price">
+            <input
+              type="text"
+              :class="`${$style.input} ${dark ? 'darkBg2 lightText' : ''}`"
+              v-model="form.name"
+              placeholder="Name">
+            <input
+              type="text"
+              :class="`${$style.input} ${dark ? 'darkBg2 lightText' : ''} `"
+              v-model="form.desc"
+              placeholder="Description">
+            <span :class="`${$style.inputWrap} ${$style.input} `">
+              <input
+                type="text"
+                :class="`${$style.inputNum} ${dark ? 'darkBg2 lightText' : ''} `"
+                v-model.number="form.rent"
+                @keypress="noText($event.target.value)"
+                placeholder="Rent price">
+              <span :class="`${$style.after} ${dark ? '$cGrey1' : ''}`" >$/h</span>
+            </span>
+            <template v-if="showError">
+              <p v-for="(e,i) in errors" :key="i" :class="`${$style.error} ${dark? 'lightText' : ''}`">
+                {{e.value}}
+              </p>
+            </template>
             <button type="submit" :class="$style.submit">Complete</button>
           </form>
         </div>
@@ -35,6 +56,9 @@
 
 <script>
   import AddPhoto from "~/components/command/AddPhoto";
+  import DataErrors from "assets/js/errors";
+  import Logo from "@/components/Navbar/Logo";
+
   export default {
     name: 'ProductCreate',
 
@@ -45,33 +69,72 @@
     data() {
       return {
         modal: false,
-        name: '',
-        desc: '',
-        price: '',
+        form: {
+          name: '',
+          desc: '',
+          rent: '',
+        },
         fileImg: null,
-        urlImg: null
+        urlImg: null,
+        showError: false
       }
     },
 
     computed: {
       dark(){
         return this.$store.getters.darkMode
+      },
+      errors(){
+        const errors = []
+
+        Object.keys(this.form).map(key => {
+          if (this.form[key].length < 1){
+            errors.push({
+              code: `empty-${key}`,
+              value: DataErrors[`empty-${key}`]
+            })
+          }else if (this.form[key].length < 5){
+            if (DataErrors[`short-${key}`]) {
+              errors.push({
+                code: `short-${key}`,
+                value: DataErrors[`short-${key}`]})
+            }
+          }
+
+        })
+        if (this.urlImg === null){
+          errors.push({
+            code: 'photo-not-select',
+            value: DataErrors['photo-not-select']
+          })
+        }
+        return errors
       }
     },
 
     methods: {
        create(){
         try{
-          this.$store.dispatch('vehicles/create',
-    {
-              name: this.name,
-              description: this.desc,
-              rent: parseInt(this.price),
-              preview: this.urlImg,
-              image: this.urlImg
-            //  fileImg on server
-            })
-          this.modal = false
+          if (this.errors.length < 1){
+            this.$store.dispatch('vehicles/create',
+              {
+                ...this.form,
+                preview: this.urlImg,
+                image: this.urlImg
+                //  fileImg on server
+              })
+
+            this.form.name = ''
+            this.form.desc = ''
+            this.form.rent = ''
+            this.fileImg = null
+            this.urlImg = null
+            this.showError = false
+
+            this.modal = false
+          }else {
+            this.showError = true
+          }
         }catch (e){
           console.log(e)
         }
@@ -79,12 +142,42 @@
       setImg(val){
         this.fileImg = val.file
         this.urlImg = val.url
+      },
+      noText(evt) {
+        this.form.rent = evt.replace(/^\D+/g, '')
       }
     }
   };
 </script>
 
 <style lang='scss' module>
+
+.inputWrap{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  .inputNum{
+    width: 100%;
+    padding-right: 60px;
+  }
+
+  .after{
+    position: absolute;
+    right: 15px;
+    font-size: 16px;
+    line-height: 14px;
+    color: $cGrey2;
+    padding: 10px;
+    z-index: 2;
+  }
+}
+.error{
+  color: $cDarkBlue;
+}
+
 .container{
   //position: relative;
   .addBtn {
@@ -136,11 +229,18 @@
     }
 
     @include xs-block(){
-      top: 17%;
+      overflow: auto;
+      height: 100%;
       bottom: 0;
       width: calc(100% - 16px * 2);
       padding: 24px 16px 32px 16px;
-      border-radius: 24px 24px 0px 0px;
+      border-radius: 0;
+
+      @media (min-height: 750px) {
+        height: 100vh;
+        margin-top: 20%;
+        border-radius: 24px 24px 0 0;
+      }
     }
 
     .head{
@@ -187,19 +287,16 @@
     .form{
       display: flex;
       flex-direction: column;
-      overflow-y: auto;
-
-      @include xs-block(){
-        height: 90%;
-      }
+      //@include xs-block(){
+      //  height: 90%;
+      //}
 
       .changeImg{
         margin-bottom: 24px;
         height: 348px;
-
+        width: 100%;
         @include xs-block(){
-          height: 260px;
-          //height: 20%;
+          max-height: 260px;
         }
       }
 
@@ -209,6 +306,25 @@
 
         @include xs-block(){
           margin-bottom: 16px;
+          //padding: 20px;
+        }
+      }
+
+      .num{
+        position: relative;
+
+        input{
+          //@include xs-block(){
+          //  padding: 20px;
+          //}
+        }
+
+        &:after{
+          content: '$/h';
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          right: 0;
         }
       }
 
@@ -221,9 +337,10 @@
         font-weight: bold;
         font-size: 16px;
         line-height: 14px;
-
         @include xs-block(){
           margin-top: 8px;
+          margin-bottom: 50px;
+
         }
       }
 

@@ -12,15 +12,23 @@ export const getters = {
 }
 export  const mutations = {
   setError(state, payload){
+    console.log(payload)
     state.error = payload
+    console.log(state.error)
   },
   darkModeChange(state){
     state.darkMode = !state.darkMode
   }
 }
 export const actions = {
-  async nuxtServerInit({dispatch}) {
-    await dispatch('vehicles/read');
+  async nuxtServerInit({ commit, dispatch}) {
+    try{
+      await dispatch('vehicles/read');
+      commit('setError', null)
+    }catch (e){
+      commit('setError', e)
+      // throw e
+    }
   },
 
   darkModeChange({commit}){

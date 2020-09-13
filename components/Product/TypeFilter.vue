@@ -12,11 +12,19 @@
 <script>
   export default {
     name: 'TypeFilter',
+
+    async asyncData({ store }){
+      if(store.state.vehicles.length < 1){
+        await store.dispatch['vehicles/read']
+      }
+    },
+
     data() {
       return {
         selectedType: '',
       };
     },
+
     computed: {
       types() {
         return this.$store.getters['vehicles/getTypes'];
@@ -25,10 +33,12 @@
         return this.$store.getters.darkMode
       }
     },
+
     mounted() {
       this.selectedType = this.types[0];
       this.$store.dispatch('vehicles/setFilter', this.selectedType)
     },
+
     methods: {
       updFilter(){
         this.$store.dispatch('vehicles/setFilter', this.selectedType)

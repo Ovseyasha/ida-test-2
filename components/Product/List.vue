@@ -1,21 +1,13 @@
 <template>
-<!--  <div >-->
   <transition-group mode="out-in" appear name="slide" :class="$style.products">
     <Item :class="$style.item" v-for="p in products" :key="p.id" :product="p" />
   </transition-group>
-<!--  </div>-->
 </template>
 
 <script>
   import Item from "~/components/Product/Item";
   export default {
     name: 'ProductList',
-
-    // asyncData( {store} ){
-    //   return {
-    //     products: store.getters['vehicles/getByType']
-    //   }
-    // },
 
     components: {
       Item

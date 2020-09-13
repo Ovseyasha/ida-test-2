@@ -7,6 +7,13 @@
 //    font-style: normal;
 //  }
 //}
+
+@mixin xl-block(){
+  @media screen and (max-width: 1312px){
+    @content;
+  }
+}
+
 @mixin lg-block(){
   @media screen and (max-width: $break_lg){
     @content;

@@ -23,6 +23,10 @@ export const getters = {
     }
     return result;
   },
+
+  getById: state => id => {
+    return state.vehicles.find(item => item.id === id)
+  }
 };
 
 export const mutations = {
@@ -50,13 +54,15 @@ export const actions = {
   },
 
   async read({commit}) {
+    // commit('setError', null, { root: true })
     try {
       const vehicles = await getVehicles();
       commit('read', vehicles);
-      commit('setError', null, {root: true})
+      commit('setError', null, { root: true })
     } catch (e) {
-      commit('setError', e, {root: true})
-      console.log(e);
+      console.log(e)
+      commit('setError', e, { root: true })
+      throw e
     }
   },
 

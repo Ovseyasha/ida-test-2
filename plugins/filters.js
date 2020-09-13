@@ -20,4 +20,3 @@ Vue.filter('price', num => {
 })
 
 
-Vue.filter('mode')

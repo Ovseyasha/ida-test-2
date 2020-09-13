@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.price">
+  <div :class="$style.price" :style="fontSize">
     {{ price | price }}
   </div>
 </template>
@@ -12,13 +12,19 @@
       price: {
         type: Number,
         default: () => 0
+      },
+      size: {
+        type: String,
+        default: () => 'inherit'
       }
     },
 
     computed: {
-      // maskPrice(){
-      //   return `${this.price} $/h`
-      // }
+      fontSize(){
+        return {
+          fontSize: this.size
+        }
+      }
     }
   };
 </script>
@@ -28,7 +34,7 @@
     color: $cPink;
     font-style: normal;
     font-weight: bold;
-    font-size: 14px;
+    //font-size: 14px;
     line-height: 148%;
   }
 </style>

@@ -2,10 +2,12 @@
   <div :class="`${$style.product} ${dark ? 'darkBg1' : ''}`">
     <img :class="$style.img" :src="product.preview" >
     <div :class="$style.content">
-      <h2 :class="`${$style.name} ${dark ? 'lightText' : ''}`">{{product.name}}</h2>
+      <nuxt-link :to="`/vehicle/${product.id}`">
+        <h2 :class="`${$style.name} ${dark ? 'lightText' : ''}`">{{product.name}}</h2>
+      </nuxt-link>
       <p :class="$style.desc">{{product.description}}</p>
       <nuxt-link :to="`/vehicle/${product.id}`">
-        <Price :price="product.rent" />
+        <Price :price="product.rent" size="14px" />
       </nuxt-link>
     </div>
   </div>

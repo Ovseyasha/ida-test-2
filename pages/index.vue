@@ -10,13 +10,13 @@
             <List/>
         </template>
         <template v-else>
-          <Loader v-if="loading" />
-          <div :class="$style.error" v-else>
+          <div :class="$style.error" >
             <h1 :class="`${$style.header} ${dark ? 'lightText' : ''}`">An error has occurred</h1>
             <p :class="`${$style.sub} ${dark ? 'lightText2' : ''}`">
               Please refresh the page
             </p>
             <button :class="$style.btnReload" @click="reload">Reload page</button>
+            <Loader v-if="loading" />
           </div>
         </template>
       </div>
@@ -67,11 +67,12 @@
       async reload(){
         try{
           this.loading = true
+          // await this.$store.dispatch('vehicles/read')
           await this.$store.dispatch('vehicles/read')
         }
         catch (e) {
-          this.loading = false
           console.log(e)
+          this.loading = false
         }
       }
     }

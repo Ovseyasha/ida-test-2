@@ -24,6 +24,7 @@ html,body{
 .wrapper {
   margin: 0 auto;
   max-width: 1312px;
+
 }
 
 a{
@@ -51,13 +52,16 @@ input{
 }
 
 // dark mode
-
+.darkShadow{
+  box-shadow: 10px 10px 64px 25px rgba($cDarkBlue, 1) !important;
+}
 .darkBg1{
   background: $cDarkBlue !important;
 }
 
 .darkBg2{
   background: $dBg2 !important;
+  transition: background .3s ease;
 }
 
 .lightText{
@@ -70,6 +74,10 @@ input{
 
 
 // animations
+.slide-enter{
+  opacity: 0;
+  transform: translateX(-15%);
+}
 
 .slide-enter-active{
   opacity: 0;
@@ -77,7 +85,7 @@ input{
 }
 
 .slide-enter-active, .slide-leave-active{
-  transition: opacity 0.3s ease, translateX 0.3s ease;
+  transition: opacity 2.3s ease, transform 2.3s ease;
 }
 
  .slide-leave-active{
