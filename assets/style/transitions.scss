@@ -1,0 +1,76 @@
+
+.slide-enter {
+  opacity: 0;
+  transform: translateX(-15%);
+}
+
+.slide-enter-active {
+  opacity: 0;
+  transform: translateX(-15%);
+}
+
+.slide-enter-active, .slide-leave-active {
+  transition: opacity 2.3s ease, transform 2.3s ease;
+}
+
+.slide-leave-active {
+  opacity: 0;
+  transform: translateX(10%);
+}
+
+// add product
+
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 0.5s;
+}
+
+.layout-enter,
+.layout-leave-active {
+  opacity: 0;
+}
+
+////////////////////////////////////////////////////////
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */
+{
+  opacity: 0;
+}
+
+.page-enter-active, .page-leave-active {
+  transition: opacity .3s;
+}
+
+.page-enter, .page-leave-to /* .fade-leave-active до версии 2.1.8 */
+{
+  opacity: 0;
+}
+
+////////////////////////////////////////////////////////
+
+
+.slide-right-enter-active {
+  transition: all 0.3s ease;
+  transform: translateX(100%);
+}
+
+.slide-right-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.slide-right-enter-to {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.slide-right-leave-active {
+  transition: all 0.3s ease;
+}
+
+.slide-right-leave-to {
+  transform: translateX(100%);
+}

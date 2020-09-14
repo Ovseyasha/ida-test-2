@@ -8,25 +8,25 @@
 </template>
 
 <script>
-  import Logo from "~/components/Navbar/Logo";
-  import Items from "~/components/Navbar/Items";
+  import Logo from '~/components/Navbar/Logo';
+  import Items from '~/components/Navbar/Items';
+
   export default {
     components: {
       Logo,
-      Items
+      Items,
     },
 
     name: 'Navbar',
 
-    computed: {
-    }
+    computed: {},
   };
 </script>
 
 <style lang='scss' module>
   .navbar {
     padding-top: 20px;
-    @include sm-block(){
+    @include xl-block() {
       padding: 20px 16px 0 16px;
     }
   }

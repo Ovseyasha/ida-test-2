@@ -16,18 +16,21 @@
   font-family: Codec Pro News, serif;
   margin: 0;
   padding: 0;
+  transition: color .3s ease, background-color .3s ease, box-shadow .3s ease;
 }
-html,body{
+
+html, body {
   height: 100%;
   width: 100%;
 }
+
 .wrapper {
   margin: 0 auto;
   max-width: 1312px;
 
 }
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -39,90 +42,15 @@ button {
   cursor: pointer;
 }
 
-input{
+input {
   border-radius: $rInput;
   padding: 21px 24px;
   outline: none;
   border: none;
-  background: $cLightGrey;
-  color: $cGrey1;
+  background: var(--bg-secondary);
+  color: var(--color-secondary);
   font-weight: 300;
   font-size: 16px;
   line-height: 14px;
 }
 
-// dark mode
-.darkShadow{
-  box-shadow: 10px 10px 64px 25px rgba($cDarkBlue, 1) !important;
-}
-.darkBg1{
-  background: $cDarkBlue !important;
-}
-
-.darkBg2{
-  background: $dBg2 !important;
-  transition: background .3s ease;
-}
-
-.lightText{
-  color: $cDarkWhite !important;
-}
-
-.lightText2{
-  color: $cGrey2 !important;
-}
-
-
-// animations
-.slide-enter{
-  opacity: 0;
-  transform: translateX(-15%);
-}
-
-.slide-enter-active{
-  opacity: 0;
-  transform: translateX(-15%);
-}
-
-.slide-enter-active, .slide-leave-active{
-  transition: opacity 2.3s ease, transform 2.3s ease;
-}
-
- .slide-leave-active{
-  opacity: 0;
-  transform: translateX(10%);
-}
-// add product
-
-.fade-enter-active{
-  transition: opacity 0.3s ease;
-}
-.fade-enter {
-  opacity: 0;
-}
-.fade-leave-active {
-  transition: opacity 0.3s ease;
-  opacity: 0;
-}
-.fade-leave-to{
-  opacity: 0;
-}
-
-.slide-right-enter-active{
-  transition: all 0.3s ease;
-  transform: translateX(100%);
-}
-.slide-right-enter{
-  opacity: 0;
-  transform: translateX(100%);
-}
-.slide-right-enter-to{
-  opacity: 1;
-  transform: translateX(0%);
-}
-.slide-right-leave-active{
-  transition: all 0.3s ease;
-}
-.slide-right-leave-to{
-  transform: translateX(100%);
-}

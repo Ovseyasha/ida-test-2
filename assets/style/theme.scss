@@ -1,0 +1,25 @@
+:root {
+  --color: #012345;
+  --color-primary: #4959ff;
+  --color-secondary: #677b8f;
+  --color-price: #f84ab3;
+
+  --bg: #fcfcfc;
+  --bg-primary: #4959ff;
+  --bg-secondary: #f3f4f7;
+}
+
+.dark-mode {
+  --color: #fcfcfc;
+  --color-primary: #4959ff;
+  --color-secondary: #99a7b5;
+  --color-price: #f84ab3;
+
+  --bg: #012345;
+  --bg-primary: #4959ff;
+  --bg-secondary: #011c37;
+}
+
+body {
+  background-color: var(--bg);
+}

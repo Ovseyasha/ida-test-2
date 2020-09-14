@@ -1,8 +1,8 @@
 <template>
   <div>
-    <button :class="$style.button"  @click="toggle">
-      <img :class="$style.img" :src="dark ? '/img/day.svg' : '/img/toggle.svg'" >
-      <span :class="`${$style.text} ${dark ? 'lightText2' : ''}`">{{dark? 'Day mod' : 'Night mod'}}</span>
+    <button :class="$style.button" @click="toggle">
+      <img :class="$style.img" :src="dark ? '/img/day.svg' : '/img/toggle.svg'">
+      <span :class="$style.text">{{dark? 'Day mod' : 'Night mod'}}</span>
     </button>
   </div>
 </template>
@@ -12,16 +12,16 @@
     name: 'NavbarToggleMode',
 
     computed: {
-      dark(){
-        return this.$store.getters.darkMode
-      }
+      dark() {
+        return this.$colorMode.preference === 'dark';
+      },
     },
 
     methods: {
-      toggle(){
-        this.$store.dispatch('darkModeChange')
-      }
-    }
+      toggle() {
+        this.$colorMode.preference = this.dark ? 'light' : 'dark';
+      },
+    },
   };
 </script>
 
@@ -33,7 +33,7 @@
 
     .img {
       margin-right: 16px;
-      @include md-block(){
+      @include md-block() {
         margin-bottom: 5px;
         margin-right: 0;
 
@@ -43,13 +43,12 @@
       line-height: 152%;
     }
 
-    .text{
+    .text {
       font-size: 16px;
       line-height: 152%;
-      color: $cGrey1;
-      transition: color .3s ease;
+      color: var(--color-secondary);
 
-      @include md-block(){
+      @include md-block() {
         display: none;
       }
     }

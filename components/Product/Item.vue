@@ -1,80 +1,80 @@
 <template>
-  <div :class="`${$style.product} ${dark ? 'darkBg1' : ''}`">
-    <img :class="$style.img" :src="product.preview" >
+  <nuxt-link :to="`/vehicle/${product.id}`" :class="$style.product">
+    <img :class="$style.img" :src="product.preview">
+
     <div :class="$style.content">
-      <nuxt-link :to="`/vehicle/${product.id}`">
-        <h2 :class="`${$style.name} ${dark ? 'lightText' : ''}`">{{product.name}}</h2>
-      </nuxt-link>
+      <h2 :class="$style.name">{{product.name}}</h2>
       <p :class="$style.desc">{{product.description}}</p>
-      <nuxt-link :to="`/vehicle/${product.id}`">
-        <Price :price="product.rent" size="14px" />
-      </nuxt-link>
+      <Price :price="product.rent" size="14px"/>
     </div>
-  </div>
+
+  </nuxt-link>
 </template>
 
 <script>
-  import Price from "~/components/Product/Price";
+  import Price from '~/components/Product/Price';
+
   export default {
     name: 'ProductItem',
 
     components: {
-      Price
+      Price,
     },
 
     props: {
       product: {
         type: Object,
-        default: () => {}
-      }
+        default: () => {
+        },
+      },
     },
 
     computed: {
-      dark(){
-        return this.$store.getters.darkMode
-      }
-    }
+      dark() {
+        return this.$store.getters.darkMode;
+      },
+    },
 
 
   };
 </script>
 
 <style lang='scss' module>
-  .product{
+  .product {
     display: flex;
     padding: 24px 32px;
-    background: $cDarkWhite;
+    background: var(--bg);
     border-radius: $rProductLg;
     transition: all .3s ease;
 
-    @include xs-block(){
+    @include xs-block() {
       border-radius: $rXs;
     }
 
-    .img{
+    .img {
       width: 88px;
       height: 88px;
       margin-bottom: 52px - 32px;
       border-radius: $rImg;
-      object-fit:cover;
+      object-fit: cover;
     }
-    .content{
+
+    .content {
       display: flex;
       flex-direction: column;
       justify-content: center;
       margin-left: 24px;
 
-      .name{
+      .name {
         margin: 10px 0 12px 0;
         font-style: normal;
         font-weight: bold;
         font-size: 16px;
         line-height: 14px;
-        color: $cDarkBlue;
-        transition: color .3s ease;
+        color: var(--color);
       }
 
-      .desc{
+      .desc {
         max-width: 197px;
         min-width: 150px;
         margin-bottom: 16px;
@@ -82,10 +82,7 @@
         font-weight: 300;
         font-size: 12px;
         line-height: 148%;
-        color: $cGrey1;
-
-        //@include xs-block(){
-        //}
+        color: var(--color-secondary);
       }
     }
   }

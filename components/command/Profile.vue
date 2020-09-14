@@ -1,7 +1,7 @@
 <template>
   <div>
     <div :class="$style.profile">
-      <h2 :class="`${$style.name} ${dark ? 'lightText' : ''}`">
+      <h2 :class="$style.name">
         Bessie Cooper
       </h2>
       <img :class="$style.img" src="/img/ava.png">
@@ -12,12 +12,6 @@
 <script>
   export default {
     name: 'NavbarProfile',
-
-    computed: {
-      dark(){
-        return this.$store.getters.darkMode
-      }
-    }
   };
 </script>
 
@@ -28,17 +22,17 @@
     align-items: center;
     padding-left: 60px;
 
-    @include xs-block(){
+    @include xs-block() {
       padding-left: 0;
     }
+
     .name {
       font-weight: bold;
       font-size: 16px;
       line-height: 152%;
-      color: $cDarkBlue;
-      transition: color .3s ease;
+      color: var(--color);
 
-      @include xs-block(){
+      @include xs-block() {
         display: none;
       }
     }
@@ -48,9 +42,9 @@
       border-radius: 50%;
       width: 56px;
       height: 56px;
-      object-fit:cover;
+      object-fit: cover;
 
-      @include xs-block(){
+      @include xs-block() {
         height: 32px;
         width: 32px;
       }

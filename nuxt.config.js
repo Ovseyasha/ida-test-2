@@ -19,6 +19,8 @@ export default {
   */
   css: [
     '~/assets/style/general.scss',
+    '~/assets/style/theme.scss',
+    '~/assets/style/transitions.scss',
   ],
   /*
   ** Plugins to load before mounting the App
@@ -26,7 +28,7 @@ export default {
   */
   plugins: [
     '@/plugins/filters',
-    '@/plugins/directives'
+    '@/plugins/directives',
   ],
   /*
   ** Auto import components
@@ -36,7 +38,9 @@ export default {
   /*
   ** Nuxt.js dev-modules
   */
-  buildModules: [],
+  buildModules: [
+    '@nuxtjs/color-mode',
+  ],
   /*
   ** Nuxt.js modules
   */

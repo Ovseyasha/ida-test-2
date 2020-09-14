@@ -1,37 +1,40 @@
 export const state = () => ({
   error: null,
-  darkMode: false
+  modal: false,
 });
+
 export const getters = {
-  error(state){
-    return state.error
+  error(state) {
+    return state.error;
   },
-  darkMode(state){
-    return state.darkMode
-  }
-}
-export  const mutations = {
-  setError(state, payload){
-    console.log(payload)
-    state.error = payload
-    console.log(state.error)
+
+
+  modal(state) {
+    return state.modal;
   },
-  darkModeChange(state){
-    state.darkMode = !state.darkMode
-  }
-}
+};
+
+export const mutations = {
+  setError(state, payload) {
+    // console.log(payload)
+    state.error = payload;
+    // console.log(state.error)
+  },
+
+  toggleModal(state) {
+    state.modal = !state.modal;
+  },
+};
+
 export const actions = {
-  async nuxtServerInit({ commit, dispatch}) {
-    try{
+  async nuxtServerInit({commit, dispatch}) {
+    try {
       await dispatch('vehicles/read');
-      commit('setError', null)
-    }catch (e){
-      commit('setError', e)
+      commit('setError', null);
+    } catch (e) {
+      commit('setError', e);
       // throw e
     }
   },
 
-  darkModeChange({commit}){
-    commit('darkModeChange')
-  }
 };
