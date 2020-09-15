@@ -57,7 +57,7 @@
       color: var(--color-secondary);
 
       &:before {
-        content: url("/img/dot.svg");
+        content: url("/ida-test-2/assets/sprite/svg/dot.svg");
         color: $cPink;
         padding-right: 20px;
       }
