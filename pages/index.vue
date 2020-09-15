@@ -1,9 +1,9 @@
 <template>
-  <div :class="$style.container" :style="error? 'padding-bottom: 55px': ''">
+  <div :class="$style.container" >
     <div class="wrapper">
       <div :class="$style.page">
 
-        <div :class="$style.products" v-if="!error">
+        <div :class="$style.products">
           <div :class="$style.controlPanel">
             <TypeFilter/>
             <Create/>
@@ -25,19 +25,6 @@
         error({ statusCode: 404, message: 'An error has occurred' })
       }
     },
-
-    data() {
-      return {
-        loading: false,
-      };
-    },
-
-    computed: {
-      error() {
-        return this.$store.getters.error !== null;
-      },
-    },
-
 
   };
 </script>

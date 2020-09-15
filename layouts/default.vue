@@ -18,11 +18,10 @@
 </template>
 
 <script>
-  import Modal from '../components/command/Modal';
 
   export default {
     components: {
-      Modal,
+      Modal: () => import('@/components/command/Modal')
     },
 
     computed: {
