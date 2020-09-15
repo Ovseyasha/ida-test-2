@@ -54,9 +54,9 @@
 
   export default {
 
-    async asyncData({store, params, redirect}) {
+    async asyncData({store, params, redirect, error}) {
       if (store.state.error) {
-        redirect('/');
+        error({ statusCode: 404, message: 'An error has occurred' })
       }
       if (store.state.vehicles.length < 1) {
         await store.dispatch('vehicles/read');
