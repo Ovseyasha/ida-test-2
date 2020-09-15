@@ -12,14 +12,9 @@
 </template>
 
 <script>
-  import Price from '~/components/Product/Price';
 
   export default {
     name: 'ProductItem',
-
-    components: {
-      Price,
-    },
 
     props: {
       product: {

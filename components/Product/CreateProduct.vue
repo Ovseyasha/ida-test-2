@@ -32,8 +32,6 @@
 </template>
 
 <script>
-  import AddPhoto from '~/components/command/AddPhoto';
-  import DataErrors from '../../assets/js/errors';
 
   export default {
     name: 'CreateProduct',

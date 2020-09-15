@@ -1,7 +1,7 @@
 <template>
   <div>
     <button :class="$style.button" @click="toggle">
-      <img :class="$style.img" :src="dark ? '/img/day.svg' : '/img/toggle.svg'">
+      <svg-icon :name="`toggle_${$colorMode.preference}`" />
       <span :class="$style.text">{{dark? 'Day mod' : 'Night mod'}}</span>
     </button>
   </div>
@@ -31,19 +31,9 @@
     justify-content: center;
     align-items: center;
 
-    .img {
-      margin-right: 16px;
-      @include md-block() {
-        margin-bottom: 5px;
-        margin-right: 0;
-
-      }
-      font-weight: 300;
-      font-size: 16px;
-      line-height: 152%;
-    }
 
     .text {
+      margin-left: 16px;
       font-size: 16px;
       line-height: 152%;
       color: var(--color-secondary);

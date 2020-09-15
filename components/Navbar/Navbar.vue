@@ -8,18 +8,9 @@
 </template>
 
 <script>
-  import Logo from '~/components/Navbar/Logo';
-  import Items from '~/components/Navbar/Items';
 
   export default {
-    components: {
-      Logo,
-      Items,
-    },
-
     name: 'Navbar',
-
-    computed: {},
   };
 </script>
 

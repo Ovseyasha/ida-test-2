@@ -1,7 +1,8 @@
 <template>
   <div>
     <button :class="$style.btn">
-      <img src="/img/noti.svg">
+      <svg-icon name="noti" />
+      <img src="/ida-test-2/assets/sprite/svg/noti.svg">
     </button>
   </div>
 </template>

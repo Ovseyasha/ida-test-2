@@ -26,18 +26,8 @@
 </template>
 
 <script>
-  import TypeFilter from '~/components/Product/TypeFilter';
-  import Create from '~/components/Product/Create';
-  import List from '~/components/Product/List';
-  import Loader from '~/components/command/Loader';
 
   export default {
-    components: {
-      TypeFilter,
-      Create,
-      List,
-      Loader,
-    },
 
     data() {
       return {

@@ -9,7 +9,7 @@
       @change="onfilePicked"
     />
     <button @click="onPickFile" :class="$style.btn" type="button">
-      <img src="/img/addPhoto.svg" alt="add Photo">
+      <svg-icon name="addPhoto" />
     </button>
   </div>
 </template>

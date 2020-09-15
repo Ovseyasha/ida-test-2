@@ -10,19 +10,8 @@
 </template>
 
 <script>
-  import ToggleMode from "~/components/command/ToggleMode";
-  import Messages from "~/components/Navbar/Messages";
-  import Notification from "~/components/Navbar/Notification";
-  import Profile from "~/components/command/Profile";
   export default {
     name: 'Items',
-
-    components: {
-      ToggleMode,
-      Messages,
-      Notification,
-      Profile
-    },
 
     computed: {
       dark(){

@@ -2,7 +2,9 @@
   <div :class="$style.container">
     <button :class="$style.addBtn" @click="openModal">
       <span>Add new</span>
-      <span :class="$style.plus">+</span>
+      <span :class="$style.plus">
+        <svg-icon :class="$style.svg" name="plus" />
+      </span>
     </button>
   </div>
 </template>
@@ -11,12 +13,6 @@
 
   export default {
     name: 'ProductCreate',
-
-    computed: {
-      dark() {
-        return this.$store.getters.darkMode;
-      },
-    },
 
     methods: {
       openModal() {
@@ -28,67 +24,42 @@
 
 <style lang='scss' module>
 
-  .inputWrap {
-    width: 100%;
+  .addBtn {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    position: relative;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 140%;
+    color: $cLightBlue;
 
-    .inputNum {
-      width: 100%;
-      padding-right: 60px;
-    }
-
-    .after {
-      position: absolute;
-      right: 15px;
+    @include xs-block() {
       font-size: 16px;
-      line-height: 14px;
-      color: $cGrey2;
-      padding: 10px;
-      z-index: 2;
+    }
+
+
+  }
+  .plus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 47px;
+    height: 47px;
+    margin-left: 20px;
+    background: $cLightBlue;
+    color: $cDarkWhite;
+    border-radius: 16px;
+
+    @include xs-block() {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
     }
   }
 
-  .error {
-    color: $cDarkBlue;
-  }
-
-  .container {
-    //position: relative;
-    .addBtn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: bold;
-      font-size: 20px;
-      line-height: 140%;
-      color: $cLightBlue;
-
-      @include xs-block() {
-        font-size: 16px;
-      }
-
-      .plus {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 47px;
-        height: 47px;
-        margin-left: 20px;
-        background: $cLightBlue;
-        color: $cDarkWhite;
-        border-radius: 16px;
-
-        @include xs-block() {
-          width: 32px;
-          height: 32px;
-          border-radius: 8px;
-        }
-      }
-    }
-
+  .svg{
+    width: 14px;
+    height: 14px;
   }
 
 </style>

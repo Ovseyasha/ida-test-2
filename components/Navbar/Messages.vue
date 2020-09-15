@@ -1,7 +1,7 @@
 <template>
   <div>
     <button>
-      <img src="/img/msg.svg" alt="">
+      <svg-icon name="msg" />
     </button>
   </div>
 </template>

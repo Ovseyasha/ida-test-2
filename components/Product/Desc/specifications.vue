@@ -4,10 +4,8 @@
       Features:
     </h2>
     <div :class="$style.item" v-for="(item, index) in items" :key="index">
-      <!--      <div :class="$style.icon">-->
-      <img :class="$style.icon" :src="item.icon" alt="icon">
-      <!--      </div>-->
-      <div>
+      <svg-icon :class="$style.icon" :name="item.icon"/>
+      <div :class="$style.text">
         <h3 :class="$style.subHeader">{{item.header}}</h3>
         <p :class="$style.desc">{{item.desc}}</p>
       </div>
@@ -23,12 +21,12 @@
       return {
         items: [
           {
-            icon: '/img/champ.svg',
+            icon: 'champ',
             header: 'A challenge for a true champion',
             desc: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
           },
           {
-            icon: '/img/pilot.svg',
+            icon: 'pilot',
             header: 'Pilot\'s sweaty hands',
             desc: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
           },
@@ -54,7 +52,6 @@
 
   .item {
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 16px;
   }
@@ -63,14 +60,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     padding: 24px;
     margin-right: 24px;
     background: var(--bg-secondary);
     border-radius: 16px;
+
+    @include xs-block(){
+      width: 48px;
+      height: 48px;
+    }
   }
 
+  .text{
+      margin-top: 14px;
+  }
 
   .desc {
     font-weight: 300;

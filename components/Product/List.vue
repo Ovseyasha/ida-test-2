@@ -5,13 +5,8 @@
 </template>
 
 <script>
-  import Item from "~/components/Product/Item";
   export default {
     name: 'ProductList',
-
-    components: {
-      Item
-    },
 
     computed: {
       products(){

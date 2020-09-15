@@ -49,7 +49,11 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
+    '@nuxtjs/svg-sprite'
   ],
+  svgSprite: {
+    // manipulate module options
+  },
 
   styleResources: {
     scss: [

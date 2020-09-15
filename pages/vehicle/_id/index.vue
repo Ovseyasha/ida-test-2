@@ -50,7 +50,6 @@
 </template>
 
 <script>
-  import Price from '@/components/Product/Price';
 
   export default {
 
@@ -71,9 +70,6 @@
       return {product};
     },
 
-    components: {
-      Price,
-    },
 
     methods: {
       rent() {
@@ -198,8 +194,9 @@
 
 
     @include lg-block() {
-      width: calc(100% - 80px);
       position: fixed;
+      width: calc(100% - 80px);
+      z-index: 999;
       margin: 0px 16px;
       padding: 12px 24px;
       left: 0;
