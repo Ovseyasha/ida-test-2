@@ -1,6 +1,6 @@
 <template>
   <transition-group mode="out-in" appear name="slide" :class="$style.products">
-    <Item :class="$style.item" v-for="p in products" :key="p.id" :product="p" />
+    <PItem :class="$style.item" v-for="p in products" :key="p.id" :product="p" />
   </transition-group>
 </template>
 

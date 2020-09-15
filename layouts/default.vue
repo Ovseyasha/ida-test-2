@@ -12,7 +12,7 @@
 
     </div>
 
-    <Modal/>
+    <LazyModal/>
 
   </div>
 </template>
@@ -20,9 +20,6 @@
 <script>
 
   export default {
-    components: {
-      Modal: () => import('@/components/command/Modal')
-    },
 
     computed: {
       dark() {

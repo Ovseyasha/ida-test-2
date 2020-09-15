@@ -5,10 +5,10 @@
 
         <div :class="$style.products">
           <div :class="$style.controlPanel">
-            <TypeFilter/>
-            <Create/>
+            <PTypeFilter/>
+            <PCreate/>
           </div>
-          <List/>
+          <PList/>
         </div>
 
       </div>

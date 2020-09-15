@@ -31,15 +31,14 @@
 
   export default {
     name: 'Modal',
-
     components: {
-      'CreateProduct': () => import('~/components/Product/CreateProduct'),
+      'PCreateProduct': () => import('~/components/Product/CreateProduct'),
     },
 
     props: {
       mode: {
         type: String,
-        default: () => 'CreateProduct',
+        default: () => 'PCreateProduct',
       },
     },
 
@@ -52,7 +51,7 @@
       title() {
         let ans = '';
         switch (this.mode) {
-          case 'CreateProduct':
+          case 'PCreateProduct':
             ans = 'Add new vehicle';
             break;
           case  'UpdateProduct':

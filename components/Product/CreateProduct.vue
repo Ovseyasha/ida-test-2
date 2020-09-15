@@ -33,6 +33,7 @@
 
 <script>
 
+  import DataErrors from '@/assets/js/errors'
   export default {
     name: 'CreateProduct',
 
