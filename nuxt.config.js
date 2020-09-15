@@ -49,7 +49,10 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
-    '@nuxtjs/svg-sprite'
+    '@nuxtjs/svg-sprite',
+    ['nuxt-lazy-load', {
+      defaultImage: '/img/bg.png',
+    }]
   ],
   svgSprite: {
     // manipulate module options

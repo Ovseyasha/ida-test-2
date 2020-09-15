@@ -2,7 +2,8 @@
   <div :class="$style.product" class="wrapper">
 
     <div :class="$style.wrapImg">
-      <ImageItem :class="$style.image" :source="product.image"/>
+<!--      <ImageItem :class="$style.image" :source="product.image"/>-->
+      <img :class="$style.image" :data-src="product.image" v-lazy-load>
     </div>
 
     <div :class="$style.content">
@@ -112,6 +113,7 @@
     height: 100%;
     width: 100%;
 
+    border-radius: $rImg;
     object-fit: cover;
 
     @include lg-block() {

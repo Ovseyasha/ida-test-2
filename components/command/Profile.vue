@@ -4,7 +4,7 @@
       <h2 :class="$style.name">
         Bessie Cooper
       </h2>
-      <img :class="$style.img" src="/img/ava.png">
+      <img :class="$style.img" data-src="/img/ava.png" v-lazy-load>
     </div>
   </div>
 </template>
