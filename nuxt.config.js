@@ -14,6 +14,12 @@ export default {
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
     ],
   },
+
+  transitions: {
+    name: 'fade',
+    mode: 'out-in',
+    appear: true
+  },
   /*
   ** Global CSS
   */
@@ -37,7 +43,8 @@ export default {
   */
   components: [
     '~/components/',
-    {path: '~/components/Product/', prefix: 'P'}
+    { path: '~/components/Product/', prefix: 'Product' },
+    { path: '~/components/Navbar/', prefix: 'Navbar'}
   ],
   /*
   ** Nuxt.js dev-modules

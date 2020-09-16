@@ -1,32 +1,50 @@
 <template>
-  <div :class="$style.CreateProduct">
-    <form :class="$style.form" @submit.prevent="create">
-      <AddPhoto @changed-img="setImg" :class="$style.changeImg"/>
+  <div :class="$style.FormCreate">
+    <form
+      :class="$style.form"
+      @submit.prevent="create"
+    >
+      <AddPhoto
+        @changed-img="setImg"
+        :class="$style.addPhoto"
+      />
       <input
         type="text"
         :class="$style.input"
         v-model="form.name"
-        placeholder="Name">
+        placeholder="Name"
+      >
       <input
         type="text"
         :class="$style.input"
         v-model="form.desc"
-        placeholder="Description">
-      <span :class="`${$style.inputWrap} ${$style.input} `">
-              <input
-                type="text"
-                :class="$style.inputNum"
-                v-model.number="form.rent"
-                @keypress="noText($event.target.value)"
-                placeholder="Rent price">
-              <span :class="$style.after">$/h</span>
-            </span>
+        placeholder="Description"
+      >
+      <span :class="[$style.inputWrap, $style.input]">
+        <input
+          type="text"
+          :class="$style.inputNum"
+          v-model.number="form.rent"
+          @keypress="noText($event.target.value)"
+          placeholder="Rent price">
+        <span :class="$style.after">
+          $/h
+        </span>
+      </span>
       <template v-if="showError">
-        <p v-for="(e,i) in errors" :key="i" :class="$style.error">
+        <p v-for="(e,i) in errors"
+           :key="i"
+           :class="$style.error"
+        >
           {{e.value}}
         </p>
       </template>
-      <button type="submit" :class="$style.submit">Complete</button>
+      <button
+        type="submit"
+        :class="$style.submit"
+      >
+        Complete
+      </button>
     </form>
   </div>
 </template>
@@ -35,7 +53,7 @@
 
   import DataErrors from '@/assets/js/errors'
   export default {
-    name: 'PCreateProduct',
+    name: 'ProductFormCreate',
 
     data() {
       return {
@@ -132,7 +150,7 @@
     flex-direction: column;
   }
 
-  .changeImg {
+  .addPhoto {
     margin-bottom: 24px;
     height: 348px;
     width: 100%;

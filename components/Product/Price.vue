@@ -1,6 +1,8 @@
 <template>
-  <div :class="$style.price" :style="fontSize">
-    {{ price | price }}
+  <div :class="$style.Price">
+    <div :class="$style.wrapper" :style="fontSize">
+      {{ price | price }}
+    </div>
   </div>
 </template>
 
@@ -30,7 +32,7 @@
 </script>
 
 <style lang='scss' module>
-  .price{
+  .wrapper{
     color: $cPink;
     font-style: normal;
     font-weight: bold;

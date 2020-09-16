@@ -1,16 +1,27 @@
 <template>
-  <div :class="$style.container">
-    <img :class="$style.img" v-if="url" :src="url" alt="lol">
-    <input
-      type="file"
-      style="display: none"
-      accept="image/*"
-      ref="fileInput"
-      @change="onfilePicked"
-    />
-    <button @click="onPickFile" :class="$style.btn" type="button">
-      <svg-icon name="addPhoto" />
-    </button>
+  <div :class="$style.AddPhoto">
+    <div :class="$style.wrapper">
+      <img
+        :class="$style.img"
+        v-if="url"
+        :src="url"
+        alt="image"
+      >
+      <input
+        type="file"
+        style="display: none"
+        accept="image/*"
+        ref="fileInput"
+        @change="onfilePicked"
+      />
+      <button
+        @click="onPickFile"
+        :class="$style.btn"
+        type="button"
+      >
+        <svg-icon name="addPhoto" />
+      </button>
+    </div>
   </div>
 </template>
 
@@ -29,6 +40,7 @@
       onPickFile() {
         this.$refs.fileInput.click();
       },
+
       onfilePicked(event) {
         const files = event.target.files;
         const fileName = files[0].name;
@@ -49,15 +61,15 @@
 </script>
 
 <style lang="scss" module>
-  .container {
-    position: relative;
-    overflow: hidden;
-    background: var(--bg-secondary);
-    border-radius: $rImg;
+  .wrapper {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    overflow: hidden;
+    border-radius: $rImg;
+    background: var(--bg-secondary);
 
     @include media(mobile){
       border-radius: 16px;

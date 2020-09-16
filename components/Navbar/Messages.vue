@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <button>
+  <div :class="$style.Messages">
+    <button :class="$style.button">
       <svg-icon name="msg" />
     </button>
   </div>
@@ -8,10 +8,10 @@
 
 <script>
   export default {
-    name: 'Messages',
+    name: 'NavbarMessages',
   };
 </script>
 
-<style lang='sass' module>
-
+<style lang='scss' module>
+.button{}
 </style>

@@ -1,22 +1,26 @@
 <template>
-  <div>
-    <div :class="$style.profile">
+  <div :class="$style.Profile">
+    <div :class="$style.wrapper">
       <h2 :class="$style.name">
         Bessie Cooper
       </h2>
-      <img :class="$style.img" data-src="/img/ava.png" v-lazy-load>
+      <img
+        :class="$style.img"
+        data-src="/img/ava.png"
+        v-lazy-load
+      >
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'NavbarProfile',
+    name: 'Profile',
   };
 </script>
 
 <style lang='scss' module>
-  .profile {
+  .wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,6 +30,7 @@
       padding-left: 0;
     }
   }
+
   .name {
     font-weight: bold;
     font-size: 16px;

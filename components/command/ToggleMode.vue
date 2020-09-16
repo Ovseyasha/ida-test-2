@@ -1,15 +1,17 @@
 <template>
-  <div>
+  <div :class="$style.ToggleMode">
     <button :class="$style.button" @click="toggle">
       <svg-icon :name="`toggle_${$colorMode.preference}`" />
-      <span :class="$style.text">{{dark? 'Day mod' : 'Night mod'}}</span>
+      <span :class="$style.text">
+        {{dark? 'Day mod' : 'Night mod'}}
+      </span>
     </button>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'NavbarToggleMode',
+    name: 'ToggleMode',
 
     computed: {
       dark() {

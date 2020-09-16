@@ -1,19 +1,19 @@
 <template>
-  <div :class="$style.term">
-    <h2 :class="$style.listHeader">
-      Additional conditions:
-    </h2>
-    <ul>
-      <li :class="$style.li" v-for="(li,index) in list" :key="index">
-        {{li}}
-      </li>
-    </ul>
+  <div :class="$style.Term">
+      <h2 :class="$style.listHeader">
+        Additional conditions:
+      </h2>
+      <ul>
+        <li :class="$style.li" v-for="(li,index) in list" :key="index">
+          {{li}}
+        </li>
+      </ul>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'term',
+    name: 'Term',
 
     data() {
       return {
@@ -39,7 +39,6 @@
 
   .li {
     display: flex;
-    align-items: flex-start;
     margin-bottom: 16px;
 
     font-weight: 300;

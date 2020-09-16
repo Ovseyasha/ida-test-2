@@ -2,7 +2,11 @@
   <div :class="$style.product" class="wrapper">
 
     <div :class="$style.wrapImg">
-      <img :class="$style.image" :data-src="`${product.image}?${product.id}`" v-lazy-load>
+      <img
+        :class="$style.image"
+        :data-src="`${product.image}?${product.id}`"
+        v-lazy-load
+      >
     </div>
 
     <div :class="$style.content">
@@ -13,19 +17,25 @@
 
         <div :class="$style.links">
 
-          <nuxt-link :class="$style.link"
-                     :active-class="$style.active"
-                     :to="`/vehicle/${product.id}/specifications`">
+          <nuxt-link
+            :class="$style.link"
+            :active-class="$style.active"
+            :to="`/vehicle/${product.id}/specifications`"
+          >
             Specifications
           </nuxt-link>
-          <nuxt-link :class="$style.link"
-                     :active-class="$style.active"
-                     :to="`/vehicle/${product.id}/team`">
+          <nuxt-link
+            :class="$style.link"
+            :active-class="$style.active"
+            :to="`/vehicle/${product.id}/team`"
+          >
             Team
           </nuxt-link>
-          <nuxt-link :class="$style.link"
-                     :active-class="$style.active"
-                     :to="`/vehicle/${product.id}/term`">
+          <nuxt-link
+            :class="$style.link"
+            :active-class="$style.active"
+            :to="`/vehicle/${product.id}/term`"
+          >
             Rent terms
           </nuxt-link>
         </div>
@@ -37,11 +47,22 @@
       </div>
 
       <div :class="$style.rent">
+
         <h4 :class="$style.price">
-          <span :class="$style.span">Rent for</span>
-          <Price :price="product.rent"/>
+
+          <span :class="$style.span">
+            Rent for
+          </span>
+
+          <ProductPrice :price="product.rent"/>
         </h4>
-        <button :class="$style.btn" @click="rent">Rent now</button>
+
+        <button
+          :class="$style.btn"
+          @click="rent"
+        >
+          Rent now
+        </button>
       </div>
 
     </div>
@@ -52,6 +73,8 @@
 <script>
 
   export default {
+
+    name: 'ProductDetail',
 
     async asyncData({store, params, redirect, error}) {
       if (store.state.error) {

@@ -8,7 +8,7 @@
         <Nuxt/>
     </div>
 
-    <LazyModal/>
+    <LazyTheModal/>
 
   </div>
 </template>
@@ -16,11 +16,7 @@
 <script>
 
   export default {
-    transitions: {
-      name: 'fade',
-      mode: 'out-in',
-      appear: true
-    }
+
   };
 </script>
 

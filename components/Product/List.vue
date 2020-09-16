@@ -1,16 +1,20 @@
 <template>
-  <transition name="slide" mode="out-in">
-    <ul :class="$style.List" :key="products.length">
-      <li :class="$style.item" v-for="p in products" :key="p.id"  >
-        <PItem   :product="p" />
-      </li>
-    </ul>
-  </transition>
+  <div :class="$style.List">
+    <transition name="slide" mode="out-in">
+      <ul :class="$style.wrapper" :key="products.length">
+        <ProductItem
+          :class="$style.item"
+          v-for="p in products"
+          :key="p.id"
+          :product="p" />
+      </ul>
+    </transition>
+  </div>
 </template>
 
 <script>
   export default {
-    name: 'PList',
+    name: 'ProductList',
 
     computed: {
       products(){
@@ -22,7 +26,7 @@
 </script>
 
 <style lang='scss' module>
-  .List{
+  .wrapper{
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
@@ -33,9 +37,11 @@
     }
   }
   .item{
+    display: flex;
     flex-basis: calc(100% / 3 - 32px);
     margin: 16px;
     list-style-type: none;
+
 
     @include media(bigDesktop){
       flex-basis: calc(100% / 2 - 32px);

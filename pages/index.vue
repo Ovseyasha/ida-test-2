@@ -2,10 +2,10 @@
   <div class="wrapper">
     <div :class="$style.page">
         <div :class="$style.controlPanel">
-          <PTypeFilter/>
-          <PCreate/>
+          <ProductTypeFilter :class="$style.productTypeFilter"/>
+          <ProductBtnCreate :class="$style.productCreate"/>
         </div>
-        <PList/>
+        <ProductList :class="$style.list"/>
     </div>
   </div>
 </template>
@@ -13,6 +13,8 @@
 <script>
 
   export default {
+
+    name: 'MainPage',
 
     asyncData({store, error}){
       if (store.state.error){
@@ -27,11 +29,6 @@
 <style lang='scss' module>
 
   .page {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    align-self: flex-start;
-
     min-height: calc(100vh - 300px);
     padding: 55px 32px;
     border-radius: $rLg;
@@ -45,9 +42,10 @@
   }
 
   .controlPanel {
-    padding: 0 16px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    padding: 0 16px;
 
     @include media(desktop){
       padding: 0 16px;
@@ -56,6 +54,12 @@
     @include media(mobile){
       padding: 0;
     }
+  }
+
+
+  .list{
+    width: 100%;
+    //height: 100%;
   }
 
 

@@ -1,13 +1,15 @@
 <template>
-  <div :class="$style.specifications">
-    <h2 :class="$style.header">
-      Features:
-    </h2>
-    <div :class="$style.item" v-for="(item, index) in items" :key="index">
-      <svg-icon :class="$style.icon" :name="item.icon"/>
-      <div :class="$style.text">
-        <h3 :class="$style.subHeader">{{item.header}}</h3>
-        <p :class="$style.desc">{{item.desc}}</p>
+  <div :class="$style.Specifications">
+    <div :class="$style.wrapper">
+      <h2 :class="$style.header">
+        Features:
+      </h2>
+      <div :class="$style.item" v-for="(item, index) in items" :key="index">
+        <svg-icon :class="$style.icon" :name="item.icon"/>
+        <div :class="$style.text">
+          <h3 :class="$style.subHeader">{{item.header}}</h3>
+          <p :class="$style.desc">{{item.desc}}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -15,7 +17,7 @@
 
 <script>
   export default {
-    name: 'specifications',
+    name: 'Specifications',
 
     data() {
       return {
@@ -37,6 +39,7 @@
 </script>
 
 <style lang='scss' module>
+
   .header {
     margin: 32px 0;
     font-style: normal;

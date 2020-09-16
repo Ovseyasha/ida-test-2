@@ -1,10 +1,7 @@
 <template>
-  <div>
+  <div :class="$style._text">
     <div :class="$style.text" v-html="desc"/>
-    <div :class="$style.content">
-      <component :is="$route.params.text"/>
-    </div>
-
+    <component :is="$route.params.text" :class="$style.component"/>
   </div>
 </template>
 
@@ -12,20 +9,19 @@
 
 
   export default {
-    name: 'subCat',
+    name: 'SubComponent',
 
     props: {
       data: {
         type: Object,
-        default: () => {
-        },
+        default: () => {},
       },
     },
 
     components: {
-      'specifications': () => import('~/components/Product/Desc/specifications'),
-      'team': () => import('~/components/Product/Desc/team'),
-      'term': () => import('~/components/Product/Desc/term'),
+      'specifications': () => import('@/components/Product/Desc/Specifications'),
+      'team': () => import('@/components/Product/Desc/Team'),
+      'term': () => import('@/components/Product/Desc/Term'),
     },
 
 
@@ -46,10 +42,8 @@
     line-height: 146%;
     color: var(--color-secondary);
   }
-
-  .content {
-    display: flex;
-    flex-direction: column;
+  .component{
+    width: 100%;
   }
 
 </style>

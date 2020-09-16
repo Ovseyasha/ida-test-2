@@ -2,8 +2,7 @@
     $width: 1312px;
   @if($screenName == smallMobile){
     $width: 320px
-  }
-  @else if($screenName == mobile){
+  } @else if($screenName == mobile){
     $width: 560px
   } @else if($screenName == tablet){
     $width: 780px

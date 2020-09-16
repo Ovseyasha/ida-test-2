@@ -1,10 +1,22 @@
 <template>
-  <div :class="$style.logo">
-    <nuxt-link to="/" :class="$style.link">
-      <svg-icon :class="$style.logoIcon" :name="`logo_${$colorMode.preference}`"/>
-      <h2 :class="$style.name">Pepelane</h2>
-    </nuxt-link>
-    <p :class="`${$style.words} ${dark ? 'lightText2' : ''}`">World's first affordable airsharing</p>
+  <div :class="$style.Logo">
+    <div :class="$style.wrapper">
+      <nuxt-link
+        to="/"
+        :class="$style.link"
+      >
+        <svg-icon
+          :class="$style.logoIcon"
+          :name="`logo_${$colorMode.preference}`"
+        />
+        <h2 :class="$style.name">
+          Pepelane
+        </h2>
+      </nuxt-link>
+      <p :class="$style.words">
+        World's first affordable airsharing
+      </p>
+    </div>
   </div>
 </template>
 
@@ -22,19 +34,16 @@
 </script>
 
 <style lang='scss' module>
-  .logo {
+  .wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-
   }
+
   .link {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-
   }
 
   .name {

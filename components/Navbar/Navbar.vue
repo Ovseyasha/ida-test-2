@@ -1,21 +1,26 @@
 <template>
-  <div :class="$style.navbar">
-    <div :class="$style.items" class="wrapper">
-      <Logo :class="$style.item"/>
+  <div :class="$style.Navbar">
+    <div :class="$style.wrapper">
+      <div
+        :class="$style.items"
+        class="wrapper"
+      >
+        <Logo :class="$style.item"/>
 
-      <div :class="$style.userBtns">
+        <div :class="$style.userBtns">
 
-        <ToggleMode :class="$style.toggle"/>
+          <ToggleMode :class="$style.toggle"/>
 
-        <div :class="$style.btns">
-          <Messages/>
-          <Notification/>
+          <div :class="$style.btns">
+            <NavbarMessages :class="$style.messages"/>
+            <NavbarNotification/>
+          </div>
+
+          <Profile/>
+
         </div>
 
-        <Profile/>
-
       </div>
-
     </div>
   </div>
 </template>
@@ -28,7 +33,7 @@
 </script>
 
 <style lang='scss' module>
-  .navbar {
+  .wrapper {
     padding-top: 20px;
 
     @include media(wrapper){

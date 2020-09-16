@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.team">
+  <div :class="$style.Team">
     <h2 :class="$style.header">
       Qualified specialists
     </h2>
@@ -18,7 +18,7 @@
 
 <script>
   export default {
-    name: 'team',
+    name: 'Team',
 
     data() {
       return {

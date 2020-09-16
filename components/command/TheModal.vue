@@ -1,28 +1,45 @@
 <template>
   <div :class="$style.Modal">
-    <transition mode="out-in" name="slide-right">
 
-      <div :class="$style.modal" v-if="open">
+    <div :class="$style.wrapper">
+      <transition
+        mode="out-in"
+        name="slide-right"
+      >
+        <div
+          :class="$style.modal"
+          v-if="open"
+        >
 
-        <div :class="$style.head">
+          <div :class="$style.head">
 
-          <h1 :class="$style.header">
-            {{title}}
-          </h1>
+            <h1 :class="$style.header">
+              {{title}}
+            </h1>
 
-          <button :class="$style.btnClose" @click="close">
-            <svg-icon :class="$style.svg" :name="`close_${$colorMode.preference}`"/>
-          </button>
+            <button
+              :class="$style.btnClose"
+              @click="close"
+            >
+              <svg-icon
+                :class="$style.svg"
+                :name="`close_${$colorMode.preference}`"/>
+            </button>
 
+          </div>
+
+          <component :is="mode"/>
         </div>
+      </transition>
 
-        <component :is="mode"/>
-      </div>
-    </transition>
-
-    <transition mode="out-in" name="fade">
-      <div :class="$style.popup" @click="close" v-if="open"></div>
-    </transition>
+      <transition mode="out-in" name="fade">
+        <div
+          :class="$style.popup"
+          v-if="open"
+          @click="close"
+        />
+      </transition>
+    </div>
 
   </div>
 </template>
@@ -32,13 +49,13 @@
   export default {
     name: 'Modal',
     components: {
-      'PCreateProduct': () => import('~/components/Product/CreateProduct'),
+      'ProductFormCreate': () => import('@/components/Product/FormCreate'),
     },
 
     props: {
       mode: {
         type: String,
-        default: () => 'PCreateProduct',
+        default: () => 'ProductFormCreate',
       },
     },
 
@@ -51,10 +68,10 @@
       title() {
         let ans = '';
         switch (this.mode) {
-          case 'PCreateProduct':
+          case 'ProductFormCreate':
             ans = 'Add new vehicle';
             break;
-          case  'UpdateProduct':
+          case  'ProductFormUpdate':
             ans = 'Update vehicle';
             break;
         }
@@ -77,10 +94,6 @@
 
 <style lang='scss' module>
 
-  .Modal {
-
-  }
-
   .head {
     display: flex;
     justify-content: space-between;
@@ -92,6 +105,7 @@
     }
 
   }
+
   .header {
     font-weight: bold;
     font-size: 40px;

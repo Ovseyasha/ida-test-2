@@ -1,22 +1,36 @@
 <template>
-    <nuxt-link :to="`/vehicle/${product.id}`" :class="$style.Item" >
-      <img :class="$style.img" :src="product.preview">
+  <div :class="$style.Item">
+    <nuxt-link
+      :to="`/vehicle/${product.id}`"
+      :class="$style.wrapper"
+    >
+
+      <img
+        :class="$style.img"
+        :src="product.preview"
+      >
 
       <div :class="$style.content">
         <h2 :class="$style.name">
           {{ product.name }}
         </h2>
-        <p :class="$style.desc">{{product.description}}</p>
-        <Price :price="product.rent" size="14px"/>
+        <p :class="$style.desc">
+          {{product.description}}
+        </p>
+        <ProductPrice
+          :price="product.rent"
+          size="14px"
+        />
       </div>
-    </nuxt-link>
 
+    </nuxt-link>
+  </div>
 </template>
 
 <script>
 
   export default {
-    name: 'PItem',
+    name: 'ProductItem',
 
     props: {
       product: {
@@ -30,8 +44,9 @@
 
 <style lang='scss' module>
 
-  .Item {
+  .wrapper {
     display: flex;
+    width: 100%;
     padding: 24px 32px;
     transition: all .3s ease;
 

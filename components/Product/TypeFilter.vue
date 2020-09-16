@@ -1,28 +1,31 @@
 <template>
-  <div :class="$style.filter">
-    <h2 :class="$style.header">Rent</h2>
+  <div :class="$style.TypeFilter">
+    <div :class="$style.wrapper">
+      <h2 :class="$style.header">
+        Rent
+      </h2>
 
-    <div :class="$style.selector">
-      <h2 :class="$style.selectHeader">{{selectedType}}</h2>
-      <select v-model="selectedType"
-              :class="$style.select"
-              @change="updFilter"
-      >
-        <option :class="$style.option"
-                v-for="(type,index) in types"
-                :key="index"
-                :value="type">
-          {{type}}
-        </option>
-      </select>
+      <div :class="$style.selector">
+        <h2 :class="$style.selectHeader">{{selectedType}}</h2>
+        <select v-model="selectedType"
+                :class="$style.select"
+                @change="updFilter"
+        >
+          <option :class="$style.option"
+                  v-for="(type,index) in types"
+                  :key="index"
+                  :value="type">
+            {{type}}
+          </option>
+        </select>
+      </div>
     </div>
-
   </div>
 </template>
 
 <script>
   export default {
-    name: 'PTypeFilter',
+    name: 'ProductTypeFilter',
 
     async asyncData({store}) {
       if (store.state.vehicles.length < 1) {
@@ -61,7 +64,7 @@
 </script>
 
 <style lang='scss' module>
-  .filter {
+  .wrapper {
     display: flex;
     justify-content: center;
     align-items: center;

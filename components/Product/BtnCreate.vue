@@ -1,18 +1,23 @@
 <template>
-  <div :class="$style.container">
-    <button :class="$style.addBtn" @click="openModal">
-      <span>Add new</span>
-      <span :class="$style.plus">
-        <svg-icon :class="$style.svg" name="plus" />
-      </span>
-    </button>
+  <div :class="$style.BtnCreate">
+      <button
+        :class="$style.addBtn"
+        @click="openModal"
+      >
+        <span :class="$style.head">
+          Add new
+        </span>
+        <span :class="$style.plus">
+          <svg-icon :class="$style.svg" name="plus" />
+        </span>
+      </button>
   </div>
 </template>
 
 <script>
 
   export default {
-    name: 'PCreate',
+    name: 'ProductBtnCreate',
 
     methods: {
       openModal() {
@@ -39,6 +44,13 @@
     }
 
   }
+
+  .head{
+    @include media(smallMobile){
+      display: none;
+    }
+  }
+
   .plus {
     display: flex;
     justify-content: center;
