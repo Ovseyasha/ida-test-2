@@ -31,7 +31,7 @@
   .navbar {
     padding-top: 20px;
 
-    @include media(mobile){
+    @include media(wrapper){
       padding: 20px 16px 0 16px;
     }
   }

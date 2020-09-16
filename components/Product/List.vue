@@ -22,9 +22,6 @@
 <style lang='scss' module>
   .List{
     display: flex;
-    align-items: stretch;
-    justify-content: center;
-    flex-direction: row;
     flex-wrap: wrap;
     overflow: hidden;
 
