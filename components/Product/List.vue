@@ -24,7 +24,7 @@
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
-
+    justify-content: center;
     @include media(mobile){
       padding-top: 24px - 6px;
     }
