@@ -6,7 +6,9 @@
       </h2>
 
       <div :class="$style.selector">
-        <h2 :class="$style.selectHeader">{{selectedType}}</h2>
+        <h2 :class="$style.selectHeader">
+          {{selectedType}}
+        </h2>
         <select v-model="selectedType"
                 :class="$style.select"
                 @change="updFilter"
@@ -86,11 +88,12 @@
   }
 
   .selectHeader {
+    padding-left: 20px;
+
     font-weight: bold;
     font-size: 40px;
     line-height: 120%;
     color: $cLightBlue;
-    padding-left: 20px;
 
     @include media(tablet){
       font-size: 24px;
@@ -98,14 +101,18 @@
 
     @include media(smallMobile){
       padding-left: 10px;
+
       font-size: 18px;
     }
 
     &:after {
       position: relative;
-      content: url("/img/arrow.svg");
       bottom: 8px;
+
       margin-left: 10px;
+
+      content: url("/img/arrow.svg");
+
 
       @include media(tablet){
         bottom: 2px;
@@ -120,20 +127,24 @@
 
   .select {
     position: absolute;
-    opacity: 0;
     top: 0;
+
     width: 100%;
     height: 100%;
-    outline: none;
-    color: $cLightBlue;
-    border: none;
-    background: none;
+
     font-weight: bold;
     font-size: 14px;
     line-height: 120%;
+    color: $cLightBlue;
+
+    background: none;
+    border: none;
+    opacity: 0;
+    outline: none;
 
     @include media(tablet){
       padding-left: 10px;
+
       font-size: 24px;
     }
   }

@@ -151,9 +151,9 @@
   }
 
   .addPhoto {
-    margin-bottom: 24px;
     height: 348px;
     width: 100%;
+    margin-bottom: 24px;
 
     @include media(mobile){
       max-height: 260px;
@@ -171,12 +171,16 @@
   .submit {
     margin-top: 16px;
     padding: 21px 0;
-    border-radius: $rInput;
-    background: $cLightBlue;
+
     color: $cDarkWhite;
     font-weight: bold;
     font-size: 16px;
     line-height: 14px;
+
+    background: $cLightBlue;
+    border-radius: $rInput;
+
+
 
     @include media(mobile){
       margin-top: 8px;
@@ -185,12 +189,12 @@
   }
 
   .inputWrap {
-    width: 100%;
+    position: relative;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-
+    width: 100%;
   }
 
   .inputNum {
@@ -201,11 +205,14 @@
   .after {
     position: absolute;
     right: 15px;
+    z-index: 2;
+
+    padding: 10px;
+
     font-size: 16px;
     line-height: 14px;
     color: $cGrey2;
-    padding: 10px;
-    z-index: 2;
+
   }
 
   .error {

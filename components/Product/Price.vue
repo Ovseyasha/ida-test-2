@@ -33,9 +33,9 @@
 
 <style lang='scss' module>
   .wrapper{
-    color: $cPink;
     font-style: normal;
     font-weight: bold;
     line-height: 148%;
+    color: $cPink;
   }
 </style>

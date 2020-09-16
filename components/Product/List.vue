@@ -1,7 +1,10 @@
 <template>
   <div :class="$style.List">
     <transition name="slide" mode="out-in">
-      <ul :class="$style.wrapper" :key="products.length">
+      <ul
+        :class="$style.wrapper"
+        :key="products.length"
+      >
         <ProductItem
           :class="$style.item"
           v-for="p in products"
@@ -29,8 +32,9 @@
   .wrapper{
     display: flex;
     flex-wrap: wrap;
-    overflow: hidden;
     justify-content: center;
+
+    overflow: hidden;
 
     @include media(mobile){
       padding-top: 24px - 6px;
@@ -40,6 +44,7 @@
     display: flex;
     flex-basis: calc(100% / 3 - 32px);
     margin: 16px;
+
     list-style-type: none;
 
 

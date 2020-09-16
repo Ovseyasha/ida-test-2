@@ -1,5 +1,8 @@
 <template>
-  <div :class="$style.product" class="wrapper">
+  <div
+    :class="$style.product"
+    class="wrapper"
+  >
 
     <div :class="$style.wrapImg">
       <img
@@ -112,8 +115,8 @@
 <style lang='scss' module>
   .product {
     display: flex;
-    margin-top: 25px;
     flex-wrap: wrap;
+    margin-top: 25px;
 
     @include media(wrapper){
       padding: 0 16px;
@@ -142,11 +145,11 @@
   }
 
   .image {
-
     height: 100%;
     width: 100%;
 
     border-radius: $rImg;
+
     object-fit: cover;
 
     @include media(bigDesktop){
@@ -163,8 +166,8 @@
     display: flex;
     flex-direction: column;
     align-self: flex-start;
-    margin-left: 64px;
     width: calc(50% - 64px);
+    margin-left: 64px;
 
     @include media(bigDesktop){
       width: 100%;
@@ -193,14 +196,15 @@
     }
 
     @include media(mobile){
-      width: 100%;
       justify-content: space-between;
+      width: 100%;
     }
 
   }
 
   .link {
     margin-right: 32px;
+
     font-weight: bold;
     font-size: 16px;
     line-height: 14px;
@@ -220,20 +224,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 64px;
+    padding: 16px 32px;
+
     background: var(--bg-secondary);
     border-radius: 16px;
-    padding: 16px 32px;
+
     transition: all .3s ease;
-    margin-bottom: 64px;
+
 
     @include media(bigDesktop){
       position: fixed;
-      width: calc(100% - 80px);
       z-index: 999;
-      margin: 0px 16px;
-      padding: 12px 24px;
       left: 0;
       bottom: 32px;
+
+      width: calc(100% - 80px);
+      margin: 0px 16px;
+      padding: 12px 24px;
+
       box-shadow: 10px 10px 64px 25px var(--bg);
     }
 
@@ -241,11 +250,12 @@
 
 
   .price {
+    display: flex;
+    align-items: center;
+
     font-weight: bold;
     font-size: 20px;
     line-height: 140%;
-    display: flex;
-    align-items: center;
 
     @include media(mobile){
       font-size: 14px;
@@ -255,21 +265,25 @@
 
   .span {
     margin-right: 10px;
+
     color: var(--color);
   }
 
   .btn {
     padding: 17px 32px;
-    background: $cLightBlue;
-    border-radius: 12px;
+
     color: $cDarkWhite;
     font-weight: bold;
     font-size: 16px;
     line-height: 14px;
 
+    background: $cLightBlue;
+    border-radius: 12px;
+
     @include media(mobile){
-      font-size: 14px;
       padding: 16px 24px;
+
+      font-size: 14px;
     }
   }
 </style>

@@ -12,8 +12,11 @@
           <ToggleMode :class="$style.toggle"/>
 
           <div :class="$style.btns">
+
             <NavbarMessages :class="$style.messages"/>
+
             <NavbarNotification/>
+
           </div>
 
           <Profile/>
@@ -30,6 +33,7 @@
   export default {
     name: 'Navbar',
   };
+
 </script>
 
 <style lang='scss' module>

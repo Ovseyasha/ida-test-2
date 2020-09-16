@@ -24,6 +24,40 @@ html, body {
   width: 100%;
 }
 
+
+
+a {
+  text-decoration: none;
+}
+
+
+button {
+  padding: 0;
+
+  background: none;
+  border: none;
+
+  outline: none;
+  cursor: pointer;
+}
+
+input {
+  padding: 21px 24px;
+
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 14px;
+  color: var(--color-secondary);
+
+
+  background: var(--bg-secondary);
+  border: none;
+  border-radius: $rInput;
+
+  outline: none;
+
+}
+
 svg{
   width: 24px;
   height: 24px;
@@ -35,32 +69,10 @@ svg{
 }
 
 .wrapper {
-  margin: 0 auto;
   max-width: 1312px;
-
+  margin: 0 auto;
 }
 
-a {
-  text-decoration: none;
-}
 
-button {
-  padding: 0;
-  background: none;
-  outline: none;
-  border: none;
-  cursor: pointer;
-}
 
-input {
-  border-radius: $rInput;
-  padding: 21px 24px;
-  outline: none;
-  border: none;
-  background: var(--bg-secondary);
-  color: var(--color-secondary);
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 14px;
-}
 

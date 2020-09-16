@@ -48,10 +48,12 @@
     display: flex;
     width: 100%;
     padding: 24px 32px;
-    transition: all .3s ease;
+
 
     background: var(--bg);
     border-radius: $rProductLg;
+
+    transition: all .3s ease;
 
     @include media(mobile){
       border-radius: $rXs;
@@ -67,7 +69,9 @@
     width: 88px;
     height: 88px;
     margin-bottom: 52px - 32px;
+
     border-radius: $rImg;
+
     object-fit: cover;
 
     @include media(smallMobile){
@@ -88,6 +92,7 @@
 
   .name {
     margin: 10px 0 12px 0;
+
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -98,6 +103,7 @@
   .desc {
     min-width: 150px;
     margin-bottom: 16px;
+
     font-style: normal;
     font-weight: 300;
     font-size: 12px;

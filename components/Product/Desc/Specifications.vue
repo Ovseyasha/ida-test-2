@@ -4,11 +4,22 @@
       <h2 :class="$style.header">
         Features:
       </h2>
-      <div :class="$style.item" v-for="(item, index) in items" :key="index">
-        <svg-icon :class="$style.icon" :name="item.icon"/>
+      <div
+        :class="$style.item"
+        v-for="(item, index) in items"
+        :key="index"
+      >
+        <svg-icon
+          :class="$style.icon"
+          :name="item.icon"
+        />
         <div :class="$style.text">
-          <h3 :class="$style.subHeader">{{item.header}}</h3>
-          <p :class="$style.desc">{{item.desc}}</p>
+          <h3 :class="$style.subHeader">
+            {{item.header}}
+          </h3>
+          <p :class="$style.desc">
+            {{item.desc}}
+          </p>
         </div>
       </div>
     </div>
@@ -42,10 +53,11 @@
 
   .header {
     margin: 32px 0;
+
     font-style: normal;
-    font-weight: bold;
     font-size: 24px;
     line-height: 21px;
+    font-weight: bold;
     color: var(--color);
   }
 
@@ -67,6 +79,7 @@
     height: 32px;
     padding: 24px;
     margin-right: 24px;
+
     background: var(--bg-secondary);
     border-radius: 16px;
 
@@ -81,8 +94,8 @@
   }
 
   .desc {
-    font-weight: 300;
     font-size: 14px;
+    font-weight: 300;
     line-height: 146%;
     color: var(--color-secondary);
   }

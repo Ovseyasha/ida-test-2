@@ -1,18 +1,34 @@
 <template>
   <div :class="$style.Team">
-    <h2 :class="$style.header">
-      Qualified specialists
-    </h2>
-    <div :class="$style.humans">
-      <div :class="$style.man" v-for="(h,index) in humans" :key="index">
-        <img :class="$style.avatar" :src="h.url" alt="avatar">
-        <div :class="$style.manDesc">
-          <h3 :class="$style.name">{{h.name}}</h3>
-          <p :class="$style.desc">{{h.position}}</p>
+    <div :class="$style.wrapper">
+      <h2 :class="$style.header">
+        Qualified specialists
+      </h2>
+      <div :class="$style.humans">
+        <div
+          :class="$style.man"
+          v-for="(h,index) in humans"
+          :key="index"
+        >
+          <img
+            :class="$style.avatar"
+            :src="h.url"
+            alt="avatar"
+          >
+          <div :class="$style.manDesc">
+            <h3 :class="$style.name">
+              {{h.name}}
+            </h3>
+            <p :class="$style.desc">
+              {{h.position}}
+            </p>
+          </div>
         </div>
       </div>
+      <p :class="$style.desc">
+        {{teamDesc}}
+      </p>
     </div>
-    <p :class="$style.desc">{{teamDesc}}</p>
   </div>
 </template>
 
@@ -50,8 +66,8 @@
   .humans {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 32px;
     flex-wrap: wrap;
+    margin-bottom: 32px;
 
     @media screen and (max-width: 1160px) {
       justify-content: space-evenly;
@@ -76,8 +92,9 @@
     .avatar {
       height: 96px;
       width: 162px;
-      border-radius: 12px;
       margin: 0 4px 16px 0;
+
+      border-radius: 12px;
 
       @include media(mobile){
         width: 132px;
@@ -101,16 +118,17 @@
 
   .header {
     margin: 32px 0;
-    font-weight: bold;
+
     font-size: 24px;
     line-height: 21px;
+    font-weight: bold;
     color: var(--color);
   }
 
   .name {
-    font-weight: bold;
     font-size: 16px;
     line-height: 14px;
+    font-weight: bold;
     color: var(--color);
 
   }
@@ -121,11 +139,12 @@
   }
 
   .desc {
+    padding-bottom: 40px;
+
     font-style: normal;
-    font-weight: 300;
     font-size: 14px;
     line-height: 146%;
+    font-weight: 300;
     color: var(--color-secondary);
-    padding-bottom: 40px;
   }
 </style>

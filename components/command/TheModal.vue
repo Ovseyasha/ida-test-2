@@ -107,8 +107,8 @@
   }
 
   .header {
-    font-weight: bold;
     font-size: 40px;
+    font-weight: bold;
     line-height: 120%;
     color: var(--color);
 
@@ -124,12 +124,14 @@
     align-items: center;
     width: 48px;
     height: 48px;
-    border-radius: 16px;
+
     background: var(--bg-secondary);
+    border-radius: 16px;
 
     @include media(mobile){
       width: 32px;
       height: 32px;
+
       border-radius: 8px;
     }
 
@@ -141,11 +143,13 @@
     bottom: 0;
     right: 0;
     z-index: 999;
+
     width: 600px - 72px * 2;
     padding: 64px 72px;
+
+    background: var(--bg);
     border-top-left-radius: $rLg;
     border-bottom-left-radius: $rLg;
-    background: var(--bg);
 
 
     @include media(tablet){
@@ -153,16 +157,19 @@
     }
 
     @include media(mobile){
-      overflow: auto;
-      height: 100%;
       bottom: 0;
+
+      height: 100%;
       width: calc(100% - 16px * 2);
       padding: 24px 16px 32px 16px;
+
       border-radius: 0;
 
+      overflow: auto;
       @media (min-height: 750px) {
         height: 100vh;
         margin-top: 20%;
+
         border-radius: 24px 24px 0 0;
       }
     }
@@ -175,12 +182,13 @@
   }
 
   .popup {
-    z-index: 998;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 998;
+
     background: rgba(52, 79, 106, 0.32);
     backdrop-filter: blur(32px);
   }

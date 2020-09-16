@@ -30,10 +30,11 @@
 
 <style lang='scss' module>
   .listHeader {
-    font-weight: bold;
+    margin: 24px 0;
+
     font-size: 16px;
     line-height: 152%;
-    margin: 24px 0;
+    font-weight: bold;
     color: var(--color);
   }
 
@@ -41,16 +42,19 @@
     display: flex;
     margin-bottom: 16px;
 
-    font-weight: 300;
     font-size: 14px;
     line-height: 146%;
-    list-style: none;
+    font-weight: 300;
     color: var(--color-secondary);
 
+    list-style: none;
+
     &:before {
-      content: url("/img/dot.svg");
-      color: $cPink;
       padding-right: 20px;
+
+      content: url("/img/dot.svg");
+
+      color: $cPink;
     }
   }
 </style>

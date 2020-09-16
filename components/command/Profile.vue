@@ -32,8 +32,8 @@
   }
 
   .name {
-    font-weight: bold;
     font-size: 16px;
+    font-weight: bold;
     line-height: 152%;
     color: var(--color);
 
@@ -43,10 +43,12 @@
   }
 
   .img {
-    margin-left: 15px;
-    border-radius: 50%;
     width: 56px;
     height: 56px;
+    margin-left: 15px;
+
+    border-radius: 50%;
+
     object-fit: cover;
 
     @include media(mobile){

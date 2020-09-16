@@ -1,7 +1,13 @@
 <template>
   <div :class="$style._text">
-    <div :class="$style.text" v-html="desc"/>
-    <component :is="$route.params.text" :class="$style.component"/>
+    <div
+      :class="$style.text"
+      v-html="desc"
+    />
+    <component
+      :is="$route.params.text"
+      :class="$style.component"
+    />
   </div>
 </template>
 

@@ -1,5 +1,6 @@
 <template>
   <div :class="$style.AddPhoto">
+
     <div :class="$style.wrapper">
       <img
         :class="$style.img"
@@ -22,6 +23,7 @@
         <svg-icon name="addPhoto" />
       </button>
     </div>
+
   </div>
 </template>
 
@@ -37,6 +39,7 @@
     },
 
     methods: {
+
       onPickFile() {
         this.$refs.fileInput.click();
       },
@@ -61,15 +64,18 @@
 </script>
 
 <style lang="scss" module>
+
   .wrapper {
-    width: 100%;
-    height: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
-    border-radius: $rImg;
+
     background: var(--bg-secondary);
+    border-radius: $rImg;
 
     @include media(mobile){
       border-radius: 16px;
@@ -78,16 +84,19 @@
 
   .img {
     max-width: 100%;
+
     object-fit: cover;
   }
 
   .btn {
     position: absolute;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 16px;
     padding: 12px;
+
     background: var(--bg);
+    border-radius: 16px;
   }
 </style>

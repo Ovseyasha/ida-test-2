@@ -63,7 +63,8 @@ export default {
     '@nuxtjs/svg-sprite',
     ['nuxt-lazy-load', {
       defaultImage: '/img/bg.png',
-    }]
+    }],
+    '@sum.cumo/nuxt-styleguide'
   ],
   svgSprite: {
     // manipulate module options

@@ -1,9 +1,9 @@
 <template>
   <div :class="$style.ToggleMode">
     <button :class="$style.button" @click="toggle">
-      <svg-icon :name="`toggle_${$colorMode.preference}`" />
+      <svg-icon :name="iconName" />
       <span :class="$style.text">
-        {{dark? 'Day mod' : 'Night mod'}}
+        {{text}}
       </span>
     </button>
   </div>
@@ -17,6 +17,16 @@
       dark() {
         return this.$colorMode.preference === 'dark';
       },
+
+      text(){
+        return this.dark ?
+          'Day mod':
+          'Night mod'
+      },
+
+      iconName(){
+        return `toggle_${this.$colorMode.preference}`
+      }
     },
 
     methods: {
@@ -36,6 +46,7 @@
 
   .text {
     margin-left: 16px;
+
     font-size: 16px;
     line-height: 152%;
     color: var(--color-secondary);

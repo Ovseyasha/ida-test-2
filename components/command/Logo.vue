@@ -34,6 +34,7 @@
 </script>
 
 <style lang='scss' module>
+
   .wrapper {
     display: flex;
     justify-content: space-between;
@@ -48,6 +49,7 @@
 
   .name {
     padding-left: 18px;
+
     color: var(--color);
 
     @include media(mobile){
@@ -71,6 +73,7 @@
 
   .words {
     margin-left: 64px;
+
     color: var(--color-secondary);
 
     @include media(bigDsktop){

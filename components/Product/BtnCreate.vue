@@ -8,7 +8,10 @@
           Add new
         </span>
         <span :class="$style.plus">
-          <svg-icon :class="$style.svg" name="plus" />
+          <svg-icon
+            :class="$style.svg"
+            name="plus"
+          />
         </span>
       </button>
   </div>
@@ -34,8 +37,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
+
     font-size: 20px;
+    font-weight: bold;
     line-height: 140%;
     color: $cLightBlue;
 
@@ -58,15 +62,18 @@
     width: 47px;
     height: 47px;
     margin-left: 20px;
-    background: $cLightBlue;
+
     color: $cDarkWhite;
+
+    background: $cLightBlue;
     border-radius: 16px;
 
     @include media(mobile){
       width: 32px;
       height: 32px;
-      border-radius: 8px;
       margin-left: 10px;
+
+      border-radius: 8px;
     }
   }
 

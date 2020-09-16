@@ -30,14 +30,16 @@
 
   .page {
     min-height: calc(100vh - 300px);
-    padding: 55px 32px;
-    border-radius: $rLg;
-    background: var(--bg-secondary);
     margin-bottom: 48px;
+    padding: 55px 32px;
+
+    background: var(--bg-secondary);
+    border-radius: $rLg;
 
     @include media(mobile){
-      border-radius: $rXs;
       padding: 55px 16px;
+
+      border-radius: $rXs;
     }
   }
 
@@ -56,10 +58,8 @@
     }
   }
 
-
   .list{
     width: 100%;
-    //height: 100%;
   }
 
 
