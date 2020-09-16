@@ -1,16 +1,19 @@
 <template>
-  <nuxt-link :to="`/vehicle/${product.id}`" :class="$style.product">
-    <img :class="$style.img" :src="product.preview">
+  <li :class="$style.Item">
+    <nuxt-link :to="`/vehicle/${product.id}`" :class="$style.product" >
+      <img :class="$style.img" :src="product.preview">
 
-    <div :class="$style.content">
-      <h2 :class="$style.name">
-        {{ product.name }}
-      </h2>
-      <p :class="$style.desc">{{product.description}}</p>
-      <Price :price="product.rent" size="14px"/>
-    </div>
+      <div :class="$style.content">
+        <h2 :class="$style.name">
+          {{ product.name }}
+        </h2>
+        <p :class="$style.desc">{{product.description}}</p>
+        <Price :price="product.rent" size="14px"/>
+      </div>
 
-  </nuxt-link>
+    </nuxt-link>
+  </li>
+
 </template>
 
 <script>
@@ -25,16 +28,19 @@
         },
       },
     },
-
   };
 </script>
 
 <style lang='scss' module>
+
+  .Item{
+    background: var(--bg);
+    border-radius: $rProductLg;
+  }
+
   .product {
     display: flex;
     padding: 24px 32px;
-    background: var(--bg);
-    border-radius: $rProductLg;
     transition: all .3s ease;
 
     @include media(mobile){

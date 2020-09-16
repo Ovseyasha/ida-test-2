@@ -20,7 +20,8 @@ export default {
   css: [
     '~/assets/style/general.scss',
     '~/assets/style/theme.scss',
-    '~/assets/style/transitions.scss',
+    '~/assets/style/_transitions.scss',
+
   ],
   /*
   ** Plugins to load before mounting the App

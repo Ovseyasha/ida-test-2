@@ -1,21 +1,15 @@
 
-.slide-enter {
-  opacity: 0;
+.v-enter-active, .v-leave-active {
+  transition: opacity .3s ease, transform .3s ease;
+}
+.v-enter , .v-enter-to, .v-enter-active {
   transform: translateX(-15%);
-}
-
-.slide-enter-active {
   opacity: 0;
-  transform: translateX(-15%);
 }
 
-.slide-enter-active, .slide-leave-active {
-  transition: opacity 2.3s ease, transform 2.3s ease;
-}
-
-.slide-leave-active {
+.v-leave-to {
+  transform: translateX(15%);
   opacity: 0;
-  transform: translateX(10%);
 }
 
 

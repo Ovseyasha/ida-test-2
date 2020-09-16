@@ -45,7 +45,7 @@
   }
 
   .controlPanel {
-    padding: 0 32px;
+    padding: 0 16px;
     display: flex;
     justify-content: space-between;
 
