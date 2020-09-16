@@ -1,7 +1,9 @@
 <template>
   <transition name="slide" mode="out-in">
     <ul :class="$style.List" :key="products.length">
-      <PItem :class="$style.item" v-for="p in products" :key="p.id"   :product="p" />
+      <li :class="$style.item" v-for="p in products" :key="p.id"  >
+        <PItem   :product="p" />
+      </li>
     </ul>
   </transition>
 </template>
@@ -25,6 +27,7 @@
     flex-wrap: wrap;
     overflow: hidden;
     justify-content: center;
+
     @include media(mobile){
       padding-top: 24px - 6px;
     }

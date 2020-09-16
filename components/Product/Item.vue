@@ -1,6 +1,5 @@
 <template>
-  <li :class="$style.Item">
-    <nuxt-link :to="`/vehicle/${product.id}`" :class="$style.product" >
+    <nuxt-link :to="`/vehicle/${product.id}`" :class="$style.Item" >
       <img :class="$style.img" :src="product.preview">
 
       <div :class="$style.content">
@@ -11,7 +10,6 @@
         <Price :price="product.rent" size="14px"/>
       </div>
     </nuxt-link>
-  </li>
 
 </template>
 
@@ -32,15 +30,13 @@
 
 <style lang='scss' module>
 
-  .Item{
-    background: var(--bg);
-    border-radius: $rProductLg;
-  }
-
-  .product {
+  .Item {
     display: flex;
     padding: 24px 32px;
     transition: all .3s ease;
+
+    background: var(--bg);
+    border-radius: $rProductLg;
 
     @include media(mobile){
       border-radius: $rXs;
