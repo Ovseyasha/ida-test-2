@@ -1,14 +1,14 @@
 
-.v-enter-active, .v-leave-active {
+.slide-enter-active, .slide-leave-active {
   transition: opacity .3s ease, transform .3s ease;
 }
-.v-enter , .v-enter-to, .v-enter-active {
-  transform: translateX(-15%);
+.slide-enter  {
+  transform: translateX(-5%);
   opacity: 0;
 }
 
-.v-leave-to {
-  transform: translateX(15%);
+.slide-leave-to {
+  transform: translateX(5%);
   opacity: 0;
 }
 

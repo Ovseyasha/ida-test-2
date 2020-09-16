@@ -1,13 +1,14 @@
 <template>
-  <transition-group tag="ul" appear mode="out-in" :class="$style.List">
+  <transition name="slide" mode="out-in">
+    <ul :class="$style.List" :key="products.length">
       <PItem :class="$style.item" v-for="p in products" :key="p.id"   :product="p" />
-  </transition-group>
+    </ul>
+  </transition>
 </template>
 
 <script>
   export default {
     name: 'PList',
-
 
     computed: {
       products(){

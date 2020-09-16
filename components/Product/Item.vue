@@ -10,7 +10,6 @@
         <p :class="$style.desc">{{product.description}}</p>
         <Price :price="product.rent" size="14px"/>
       </div>
-
     </nuxt-link>
   </li>
 
