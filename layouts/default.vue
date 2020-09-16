@@ -1,15 +1,11 @@
 <template>
-  <div :class="`${$style.app} ${dark ? 'darkBg1' : ''}`">
+  <div :class="$style.app">
     <div>
       <Navbar/>
     </div>
 
     <div :class="$style.content">
-
-      <transition appear mode="out-in" name="fade">
         <Nuxt/>
-      </transition>
-
     </div>
 
     <LazyModal/>
@@ -20,12 +16,11 @@
 <script>
 
   export default {
-
-    computed: {
-      dark() {
-        return this.$store.getters.darkMode;
-      },
-    },
+    transitions: {
+      name: 'fade',
+      mode: 'out-in',
+      appear: true
+    }
   };
 </script>
 
@@ -33,14 +28,12 @@
   .app {
     height: 100%;
     width: 100%;
-    transition: background .3s ease;
-
   }
 
   .content {
     padding-top: 50px;
 
-    @include xs-block() {
+    @include media(mobile){
       padding-top: 25px;
     }
   }

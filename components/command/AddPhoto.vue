@@ -58,23 +58,24 @@
     justify-content: center;
     align-items: center;
 
-    @include xs-block() {
+
+    @include media(mobile){
       border-radius: 16px;
     }
+  }
 
-    .img {
-      max-width: 100%;
-      object-fit: cover;
-    }
+  .img {
+    max-width: 100%;
+    object-fit: cover;
+  }
 
-    .btn {
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 16px;
-      padding: 12px;
-      background: var(--bg);
-    }
+  .btn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    padding: 12px;
+    background: var(--bg);
   }
 </style>

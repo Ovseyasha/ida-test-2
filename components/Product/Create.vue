@@ -12,13 +12,14 @@
 <script>
 
   export default {
-    name: 'ProductCreate',
+    name: 'PCreate',
 
     methods: {
       openModal() {
         this.$store.commit('toggleModal');
       },
     },
+
   };
 </script>
 
@@ -33,10 +34,9 @@
     line-height: 140%;
     color: $cLightBlue;
 
-    @include xs-block() {
+    @include media(mobile){
       font-size: 16px;
     }
-
 
   }
   .plus {
@@ -50,10 +50,11 @@
     color: $cDarkWhite;
     border-radius: 16px;
 
-    @include xs-block() {
+    @include media(mobile){
       width: 32px;
       height: 32px;
       border-radius: 8px;
+      margin-left: 10px;
     }
   }
 

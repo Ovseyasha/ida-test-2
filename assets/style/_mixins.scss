@@ -1,39 +1,20 @@
-//сделать
-//@mixin font() {
-//  @font-face {
-//    font-family: 'Codec Pro';
-//    src: url('~@/assets/fonts/CodecPro-Bold.woff2') format('woff2');
-//    font-weight: 700;
-//    font-style: normal;
-//  }
-//}
-
-@mixin xl-block(){
-  @media screen and (max-width: 1312px){
-    @content;
+@mixin media($screenName){
+    $width: 1312px;
+  @if($screenName == smallMobile){
+    $width: 320px
   }
-}
-
-@mixin lg-block(){
-  @media screen and (max-width: $break_lg){
-    @content;
+  @else if($screenName == mobile){
+    $width: 560px
+  } @else if($screenName == tablet){
+    $width: 780px
+  } @else if($screenName ==  desktop){
+    $width: 960px
+  } @else if($screenName == bigDesktop) {
+    $width: 1100px
+  } @else if($screenName == wrapper){
+    $width: 1312px
   }
-}
-
-@mixin md-block(){
-  @media screen and (max-width: $break_md){
-    @content;
-  }
-}
-
-@mixin sm-block(){
-  @media screen and (max-width: $break_sm){
-    @content;
-  }
-}
-
-@mixin xs-block(){
-  @media screen and (max-width: $break_xs){
-    @content;
+  @media screen and (max-width: $width) {
+    @content
   }
 }

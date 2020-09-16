@@ -67,7 +67,7 @@
     background: var(--bg-secondary);
     border-radius: 16px;
 
-    @include xs-block(){
+    @include media(mobile){
       width: 48px;
       height: 48px;
     }

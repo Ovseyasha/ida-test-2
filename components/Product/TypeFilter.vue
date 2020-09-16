@@ -22,7 +22,7 @@
 
 <script>
   export default {
-    name: 'TypeFilter',
+    name: 'PTypeFilter',
 
     async asyncData({store}) {
       if (store.state.vehicles.length < 1) {
@@ -44,8 +44,10 @@
     },
 
     mounted() {
-      this.selectedType = this.types[0];
-      this.$store.dispatch('vehicles/setFilter', this.selectedType);
+      if (this.types.length > 0){
+        this.selectedType = this.types[0];
+        this.$store.dispatch('vehicles/setFilter', this.selectedType);
+      }
     },
 
     methods: {
@@ -71,8 +73,12 @@
     line-height: 120%;
     color: var(--color);
 
-    @include sm-block() {
+    @include media(tablet){
       font-size: 24px;
+    }
+
+    @include media(smallMobile){
+      font-size: 18px;
     }
   }
 
@@ -83,16 +89,26 @@
     color: $cLightBlue;
     padding-left: 20px;
 
+    @include media(tablet){
+      font-size: 24px;
+    }
+
+    @include media(smallMobile){
+      padding-left: 10px;
+      font-size: 18px;
+    }
+
     &:after {
       position: relative;
       content: url("/img/arrow.svg");
       bottom: 8px;
       margin-left: 10px;
+
+      @include media(tablet){
+        bottom: 2px;
+      }
     }
 
-    @include sm-block() {
-      font-size: 24px;
-    }
   }
 
   .selector {
@@ -113,7 +129,7 @@
     font-size: 14px;
     line-height: 120%;
 
-    @include sm-block() {
+    @include media(tablet){
       padding-left: 10px;
       font-size: 24px;
     }

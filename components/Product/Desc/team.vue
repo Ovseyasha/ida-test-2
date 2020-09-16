@@ -51,11 +51,15 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 32px;
+    flex-wrap: wrap;
 
-    @include xs-block() {
-      flex-direction: column;
+    @media screen and (max-width: 1160px) {
+      justify-content: space-evenly;
     }
 
+    @include media(mobile){
+      flex-direction: column;
+    }
 
   }
 
@@ -64,14 +68,21 @@
     flex-direction: column;
     justify-content: space-between;
 
-    @include xs-block() {
+    @include media(mobile){
       flex-direction: row;
       justify-content: flex-start;
     }
 
     .avatar {
+      height: 96px;
+      width: 162px;
       border-radius: 12px;
-      margin-bottom: 16px;
+      margin: 0 4px 16px 0;
+
+      @include media(mobile){
+        width: 132px;
+        height: 80px;
+      }
     }
 
   }
@@ -81,7 +92,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-    @include xs-block() {
+    @include media(mobile){
       justify-content: center;
       margin-left: 16px;
     }

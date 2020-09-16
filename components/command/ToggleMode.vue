@@ -30,17 +30,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
 
+  .text {
+    margin-left: 16px;
+    font-size: 16px;
+    line-height: 152%;
+    color: var(--color-secondary);
 
-    .text {
-      margin-left: 16px;
-      font-size: 16px;
-      line-height: 152%;
-      color: var(--color-secondary);
-
-      @include md-block() {
-        display: none;
-      }
+    @include media(desktop){
+      display: none;
     }
   }
 </style>

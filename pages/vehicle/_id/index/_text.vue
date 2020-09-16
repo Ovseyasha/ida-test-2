@@ -1,8 +1,6 @@
 <template>
-  <div :class="$style.page">
-
-    <div :class="$style.text" v-html="desc"></div>
-
+  <div>
+    <div :class="$style.text" v-html="desc"/>
     <div :class="$style.content">
       <component :is="$route.params.text"/>
     </div>
@@ -40,20 +38,18 @@
 </script>
 
 <style lang="scss" module>
-  .page {
 
-    .text {
-      font-style: normal;
-      font-weight: 300;
-      font-size: 14px;
-      line-height: 146%;
-      color: var(--color-secondary);
-    }
+  .text {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 146%;
+    color: var(--color-secondary);
+  }
 
-    .content {
-      display: flex;
-      flex-direction: column;
-    }
+  .content {
+    display: flex;
+    flex-direction: column;
   }
 
 </style>

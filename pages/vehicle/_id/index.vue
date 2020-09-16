@@ -2,8 +2,7 @@
   <div :class="$style.product" class="wrapper">
 
     <div :class="$style.wrapImg">
-<!--      <ImageItem :class="$style.image" :source="product.image"/>-->
-      <img :class="$style.image" :data-src="product.image" v-lazy-load>
+      <img :class="$style.image" :data-src="`${product.image}?${product.id}`" v-lazy-load>
     </div>
 
     <div :class="$style.content">
@@ -39,7 +38,7 @@
 
       <div :class="$style.rent">
         <h4 :class="$style.price">
-          <span>Rent for</span>
+          <span :class="$style.span">Rent for</span>
           <Price :price="product.rent"/>
         </h4>
         <button :class="$style.btn" @click="rent">Rent now</button>
@@ -77,6 +76,12 @@
         console.log('buy it!');
       },
     },
+
+    head: {
+      link: [
+        {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      ],
+    }
   };
 </script>
 
@@ -87,11 +92,11 @@
     margin-top: 25px;
     flex-wrap: wrap;
 
-    @include xl-block() {
+    @include media(wrapper){
       padding: 0 16px;
     }
 
-    @include lg-block() {
+    @include media(bigDesktop){
       justify-content: space-between;
       align-items: center;
       flex-direction: column;
@@ -103,7 +108,12 @@
   .wrapImg {
     width: 50%;
     height: 100%;
-    @include lg-block() {
+
+    @include media(bigDesktop) {
+      width: 50%;
+    }
+
+    @include media(tablet){
       width: 100%;
     }
   }
@@ -116,11 +126,11 @@
     border-radius: $rImg;
     object-fit: cover;
 
-    @include lg-block() {
+    @include media(bigDesktop){
       margin-bottom: 22px;
     }
 
-    @include md-block() {
+    @include media(desktop){
       width: 100%;
       height: 100%;
     }
@@ -133,7 +143,7 @@
     margin-left: 64px;
     width: calc(50% - 64px);
 
-    @include lg-block() {
+    @include media(bigDesktop){
       width: 100%;
       margin-left: 0;
     }
@@ -145,8 +155,7 @@
     line-height: 120%;
     color: var(--color);
 
-
-    @include sm-block() {
+    @include media(tablet){
       font-size: 24px;
     }
   }
@@ -156,11 +165,11 @@
     align-items: center;
     margin: 32px 0;
 
-    @include sm-block() {
+    @include media(tablet){
       margin: 16px 0 20px 0;
     }
 
-    @include xs-block() {
+    @include media(mobile){
       width: 100%;
       justify-content: space-between;
     }
@@ -174,7 +183,7 @@
     line-height: 14px;
     color: var(--color-secondary);
 
-    @include xs-block() {
+    @include media(mobile){
       margin-right: 0;
       font-size: 14px;
     }
@@ -194,8 +203,7 @@
     transition: all .3s ease;
     margin-bottom: 64px;
 
-
-    @include lg-block() {
+    @include media(bigDesktop){
       position: fixed;
       width: calc(100% - 80px);
       z-index: 999;
@@ -216,14 +224,15 @@
     display: flex;
     align-items: center;
 
-    @include xs-block() {
+    @include media(mobile){
       font-size: 14px;
     }
 
-    span {
-      margin-right: 10px;
-      color: var(--color);
-    }
+  }
+
+  .span {
+    margin-right: 10px;
+    color: var(--color);
   }
 
   .btn {
@@ -235,7 +244,7 @@
     font-size: 16px;
     line-height: 14px;
 
-    @include xs-block() {
+    @include media(mobile){
       font-size: 14px;
       padding: 16px 24px;
     }

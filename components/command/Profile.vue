@@ -22,32 +22,31 @@
     align-items: center;
     padding-left: 60px;
 
-    @include xs-block() {
+    @include media(mobile){
       padding-left: 0;
     }
+  }
+  .name {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 152%;
+    color: var(--color);
 
-    .name {
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 152%;
-      color: var(--color);
-
-      @include xs-block() {
-        display: none;
-      }
+    @include media(mobile){
+      display: none;
     }
+  }
 
-    .img {
-      margin-left: 15px;
-      border-radius: 50%;
-      width: 56px;
-      height: 56px;
-      object-fit: cover;
+  .img {
+    margin-left: 15px;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
 
-      @include xs-block() {
-        height: 32px;
-        width: 32px;
-      }
+    @include media(mobile){
+      height: 32px;
+      width: 32px;
     }
   }
 </style>

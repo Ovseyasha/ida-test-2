@@ -3,7 +3,7 @@
     <h2 :class="$style.listHeader">
       Additional conditions:
     </h2>
-    <ul :class="$style.list">
+    <ul>
       <li :class="$style.li" v-for="(li,index) in list" :key="index">
         {{li}}
       </li>
@@ -25,11 +25,6 @@
       };
     },
 
-    computed: {
-      dark() {
-        return this.$store.getters.darkMode;
-      },
-    },
   };
 </script>
 
@@ -42,25 +37,21 @@
     color: var(--color);
   }
 
-  .list {
+  .li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 16px;
 
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 146%;
+    list-style: none;
+    color: var(--color-secondary);
 
-    .li {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 16px;
-
-      font-weight: 300;
-      font-size: 14px;
-      line-height: 146%;
-      list-style: none;
-      color: var(--color-secondary);
-
-      &:before {
-        content: url("/ida-test-2/assets/sprite/svg/dot.svg");
-        color: $cPink;
-        padding-right: 20px;
-      }
+    &:before {
+      content: url("/img/dot.svg");
+      color: $cPink;
+      padding-right: 20px;
     }
   }
 </style>

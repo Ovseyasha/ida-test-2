@@ -27,6 +27,11 @@ html, body {
 svg{
   width: 24px;
   height: 24px;
+
+  @include media(mobile){
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .wrapper {

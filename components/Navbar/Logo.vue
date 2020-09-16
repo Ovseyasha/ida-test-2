@@ -40,19 +40,33 @@
   .name {
     padding-left: 18px;
     color: var(--color);
+
+    @include media(mobile){
+      font-size: 18px;
+    }
+
+    @include media(smallMobile){
+      display: none;
+    }
   }
 
   .logoIcon{
     width: 48px;
     height: 48px;
+
+    @include media(mobile){
+      width: 32px;
+      height: 32px;
+    }
   }
 
   .words {
     margin-left: 64px;
     color: var(--color-secondary);
 
-    @include lg-block() {
+    @include media(bigDsktop){
       display: none;
     }
+
   }
 </style>

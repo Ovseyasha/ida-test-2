@@ -2,7 +2,20 @@
   <div :class="$style.navbar">
     <div :class="$style.items" class="wrapper">
       <Logo :class="$style.item"/>
-      <Items :class="$style.item"/>
+
+      <div :class="$style.userBtns">
+
+        <ToggleMode :class="$style.toggle"/>
+
+        <div :class="$style.btns">
+          <Messages/>
+          <Notification/>
+        </div>
+
+        <Profile/>
+
+      </div>
+
     </div>
   </div>
 </template>
@@ -17,7 +30,8 @@
 <style lang='scss' module>
   .navbar {
     padding-top: 20px;
-    @include xl-block() {
+
+    @include media(mobile){
       padding: 20px 16px 0 16px;
     }
   }
@@ -28,6 +42,21 @@
     align-items: center;
   }
 
-  .item {
+  .userBtns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .btns {
+    display: flex;
+  }
+
+  .toggle {
+    padding-right: 100px;
+
+    @include media(desktop){
+      padding-right: 16px;
+    }
   }
 </style>

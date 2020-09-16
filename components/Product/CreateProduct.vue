@@ -35,7 +35,7 @@
 
   import DataErrors from '@/assets/js/errors'
   export default {
-    name: 'CreateProduct',
+    name: 'PCreateProduct',
 
     data() {
       return {
@@ -130,54 +130,39 @@
   .form {
     display: flex;
     flex-direction: column;
+  }
 
-    //@include xs-block(){
-    //  height: 90%;
-    //}
+  .changeImg {
+    margin-bottom: 24px;
+    height: 348px;
+    width: 100%;
 
-    .changeImg {
-      margin-bottom: 24px;
-      height: 348px;
-      width: 100%;
-      @include xs-block() {
-        max-height: 260px;
-      }
+    @include media(mobile){
+      max-height: 260px;
     }
+  }
 
-    .input {
-      margin-bottom: 24px;
+  .input {
+    margin-bottom: 24px;
 
-      @include xs-block() {
-        margin-bottom: 16px;
-      }
+    @include media(mobile){
+      margin-bottom: 16px;
     }
+  }
 
-    .num {
-      position: relative;
+  .submit {
+    margin-top: 16px;
+    padding: 21px 0;
+    border-radius: $rInput;
+    background: $cLightBlue;
+    color: $cDarkWhite;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 14px;
 
-      &:after {
-        content: '$/h';
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        right: 0;
-      }
-    }
-
-    .submit {
-      margin-top: 16px;
-      padding: 21px 0;
-      border-radius: $rInput;
-      background: $cLightBlue;
-      color: $cDarkWhite;
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 14px;
-      @include xs-block() {
-        margin-top: 8px;
-        margin-bottom: 50px;
-
-      }
+    @include media(mobile){
+      margin-top: 8px;
+      margin-bottom: 50px;
     }
   }
 
@@ -188,20 +173,21 @@
     align-items: center;
     position: relative;
 
-    .inputNum {
-      width: 100%;
-      padding-right: 60px;
-    }
+  }
 
-    .after {
-      position: absolute;
-      right: 15px;
-      font-size: 16px;
-      line-height: 14px;
-      color: $cGrey2;
-      padding: 10px;
-      z-index: 2;
-    }
+  .inputNum {
+    width: 100%;
+    padding-right: 60px;
+  }
+
+  .after {
+    position: absolute;
+    right: 15px;
+    font-size: 16px;
+    line-height: 14px;
+    color: $cGrey2;
+    padding: 10px;
+    z-index: 2;
   }
 
   .error {

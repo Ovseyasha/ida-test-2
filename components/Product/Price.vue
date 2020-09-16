@@ -34,7 +34,6 @@
     color: $cPink;
     font-style: normal;
     font-weight: bold;
-    //font-size: 14px;
     line-height: 148%;
   }
 </style>
