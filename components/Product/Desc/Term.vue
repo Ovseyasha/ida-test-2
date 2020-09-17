@@ -1,5 +1,6 @@
 <template>
   <div :class="$style.Term">
+    <div :class="$style.wrapper">
       <h2 :class="$style.listHeader">
         Additional conditions:
       </h2>
@@ -8,6 +9,7 @@
           {{li}}
         </li>
       </ul>
+    </div>
   </div>
 </template>
 
@@ -31,29 +33,24 @@
 <style lang='scss' module>
   .listHeader {
     margin: 24px 0;
-
     font-size: 16px;
-    line-height: 152%;
     font-weight: bold;
+    line-height: 152%;
     color: var(--color);
   }
 
   .li {
     display: flex;
     margin-bottom: 16px;
-
     font-size: 14px;
-    line-height: 146%;
     font-weight: 300;
+    line-height: 146%;
     color: var(--color-secondary);
-
     list-style: none;
 
     &:before {
-      padding-right: 20px;
-
       content: url("/img/dot.svg");
-
+      padding-right: 20px;
       color: $cPink;
     }
   }

@@ -62,7 +62,7 @@ svg{
   width: 24px;
   height: 24px;
 
-  @include media(mobile){
+  @include respond-to(mobile){
     width: 20px;
     height: 20px;
   }

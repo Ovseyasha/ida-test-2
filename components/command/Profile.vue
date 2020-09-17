@@ -26,7 +26,7 @@
     align-items: center;
     padding-left: 60px;
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       padding-left: 0;
     }
   }
@@ -37,7 +37,7 @@
     line-height: 152%;
     color: var(--color);
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       display: none;
     }
   }
@@ -45,13 +45,11 @@
   .img {
     width: 56px;
     height: 56px;
+    object-fit: cover;
     margin-left: 15px;
-
     border-radius: 50%;
 
-    object-fit: cover;
-
-    @include media(mobile){
+    @include respond-to(mobile) {
       height: 32px;
       width: 32px;
     }

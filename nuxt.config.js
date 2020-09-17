@@ -34,8 +34,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    '@/plugins/filters',
-    '@/plugins/directives',
+    '@/plugins/filters'
   ],
   /*
   ** Auto import components
@@ -43,8 +42,6 @@ export default {
   */
   components: [
     '~/components/',
-    { path: '~/components/Product/', prefix: 'Product' },
-    { path: '~/components/Navbar/', prefix: 'Navbar'}
   ],
   /*
   ** Nuxt.js dev-modules

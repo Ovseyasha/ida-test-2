@@ -5,7 +5,7 @@
         :class="$style.items"
         class="wrapper"
       >
-        <Logo :class="$style.item"/>
+        <TheLogo :class="$style.item"/>
 
         <div :class="$style.userBtns">
 
@@ -40,7 +40,7 @@
   .wrapper {
     padding-top: 20px;
 
-    @include media(wrapper){
+    @include respond-to(wrapper) {
       padding: 20px 16px 0 16px;
     }
   }
@@ -64,7 +64,7 @@
   .toggle {
     padding-right: 100px;
 
-    @include media(desktop){
+    @include respond-to(tablet) {
       padding-right: 16px;
     }
   }

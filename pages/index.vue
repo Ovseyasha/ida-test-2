@@ -32,13 +32,11 @@
     min-height: calc(100vh - 300px);
     margin-bottom: 48px;
     padding: 55px 32px;
-
-    background: var(--bg-secondary);
     border-radius: $rLg;
+    background: var(--bg-secondary);
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       padding: 55px 16px;
-
       border-radius: $rXs;
     }
   }
@@ -49,17 +47,18 @@
     justify-content: space-between;
     padding: 0 16px;
 
-    @include media(desktop){
+    @include respond-to(tablet) {
       padding: 0 16px;
     }
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       padding: 0;
     }
   }
 
   .list{
     width: 100%;
+    overflow: hidden;
   }
 
 

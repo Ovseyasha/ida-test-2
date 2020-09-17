@@ -34,9 +34,7 @@
     flex-wrap: wrap;
     justify-content: center;
 
-    overflow: hidden;
-
-    @include media(mobile){
+    @include respond-to(mobile) {
       padding-top: 24px - 6px;
     }
   }
@@ -44,19 +42,17 @@
     display: flex;
     flex-basis: calc(100% / 3 - 32px);
     margin: 16px;
-
     list-style-type: none;
 
-
-    @include media(bigDesktop){
+    @include respond-to(desktop) {
       flex-basis: calc(100% / 2 - 32px);
     }
 
-    @include media(tablet){
+    @include respond-to(mobile-l) {
       flex-basis: calc(100% - 32px);
     }
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       flex-basis: 100%;
       margin: 6px 0;
     }

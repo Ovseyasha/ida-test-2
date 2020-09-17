@@ -1,8 +1,10 @@
 <template>
   <div :class="$style.Messages">
-    <button :class="$style.button">
-      <svg-icon name="msg" />
-    </button>
+    <div :class="$style.wrapper">
+      <button :class="$style.button">
+        <svg-icon name="msg" />
+      </button>
+    </div>
   </div>
 </template>
 
@@ -13,5 +15,7 @@
 </script>
 
 <style lang='scss' module>
-.button{}
+.wrapper {
+
+}
 </style>

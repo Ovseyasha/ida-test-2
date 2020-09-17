@@ -39,17 +39,14 @@ export default {
   align-items: center;
   min-height: calc(100vh - 300px);
   padding: 55px 32px;
-
-  background: var(--bg-secondary);
   border-radius: $rLg;
+  background: var(--bg-secondary);
 
-  @include media(mobile){
+  @include respond-to(mobile) {
     padding: 55px 16px;
-
     border-radius: $rXs;
   }
 }
-
 
 .error {
   display: flex;
@@ -60,21 +57,19 @@ export default {
 .header {
   margin: 0;
   padding: 0;
-
   font-style: normal;
   font-weight: bold;
   font-size: 40px;
   line-height: 120%;
   color: var(--color);
 
-  @include media(mobile){
+  @include respond-to(mobile) {
     font-size: 24px;
   }
 }
 .sub {
   margin: 24px 0 40px 0;
   padding: 0;
-
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
@@ -83,13 +78,11 @@ export default {
 }
 .btnReload {
   padding: 17px 32px;
-
   color: $cDarkWhite;
-
-  background: $cLightBlue;
   border-radius: $rInput;
+  background: $cLightBlue;
 
-  @include media(mobile){
+  @include respond-to(mobile) {
     padding: 16px 24px;
   }
 }

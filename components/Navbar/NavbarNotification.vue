@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <button :class="$style.btn">
-      <svg-icon name="noti" />
-    </button>
+  <div :class="$style.Notification">
+    <div :class="$style.wraper">
+      <button :class="$style.btn">
+        <svg-icon name="noti" />
+      </button>
+    </div>
   </div>
 </template>
 
@@ -16,7 +18,7 @@
   .btn {
     padding-left: 30px;
 
-    @include media(desktop){
+    @include respond-to(tablet) {
       padding-left: 16px;
     }
   }

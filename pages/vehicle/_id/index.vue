@@ -3,7 +3,6 @@
     :class="$style.product"
     class="wrapper"
   >
-
     <div :class="$style.wrapImg">
       <img
         :class="$style.image"
@@ -118,11 +117,11 @@
     flex-wrap: wrap;
     margin-top: 25px;
 
-    @include media(wrapper){
+    @include respond-to(wrapper) {
       padding: 0 16px;
     }
 
-    @include media(bigDesktop){
+    @include respond-to(desktop) {
       justify-content: space-between;
       align-items: center;
       flex-direction: column;
@@ -135,11 +134,11 @@
     width: 50%;
     height: 100%;
 
-    @include media(bigDesktop) {
+    @include respond-to(desktop) {
       width: 50%;
     }
 
-    @include media(tablet){
+    @include respond-to(mobile-l) {
       width: 100%;
     }
   }
@@ -147,16 +146,14 @@
   .image {
     height: 100%;
     width: 100%;
-
     border-radius: $rImg;
-
     object-fit: cover;
 
-    @include media(bigDesktop){
+    @include respond-to(desktop) {
       margin-bottom: 22px;
     }
 
-    @include media(desktop){
+    @include respond-to(tablet) {
       width: 100%;
       height: 100%;
     }
@@ -169,19 +166,19 @@
     width: calc(50% - 64px);
     margin-left: 64px;
 
-    @include media(bigDesktop){
+    @include respond-to(desktop) {
       width: 100%;
       margin-left: 0;
     }
   }
 
   .name {
-    font-weight: bold;
     font-size: 40px;
+    font-weight: bold;
     line-height: 120%;
     color: var(--color);
 
-    @include media(tablet){
+    @include respond-to(mobile-l) {
       font-size: 24px;
     }
   }
@@ -191,11 +188,11 @@
     align-items: center;
     margin: 32px 0;
 
-    @include media(tablet){
+    @include respond-to(mobile-l) {
       margin: 16px 0 20px 0;
     }
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       justify-content: space-between;
       width: 100%;
     }
@@ -204,13 +201,12 @@
 
   .link {
     margin-right: 32px;
-
-    font-weight: bold;
     font-size: 16px;
+    font-weight: bold;
     line-height: 14px;
     color: var(--color-secondary);
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       margin-right: 0;
       font-size: 14px;
     }
@@ -226,23 +222,19 @@
     align-items: center;
     margin-bottom: 64px;
     padding: 16px 32px;
-
-    background: var(--bg-secondary);
     border-radius: 16px;
-
+    background: var(--bg-secondary);
     transition: all .3s ease;
 
 
-    @include media(bigDesktop){
+    @include respond-to(desktop) {
       position: fixed;
       z-index: 999;
       left: 0;
       bottom: 32px;
-
       width: calc(100% - 80px);
       margin: 0px 16px;
       padding: 12px 24px;
-
       box-shadow: 10px 10px 64px 25px var(--bg);
     }
 
@@ -252,12 +244,11 @@
   .price {
     display: flex;
     align-items: center;
-
-    font-weight: bold;
     font-size: 20px;
+    font-weight: bold;
     line-height: 140%;
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       font-size: 14px;
     }
 
@@ -265,24 +256,20 @@
 
   .span {
     margin-right: 10px;
-
     color: var(--color);
   }
 
   .btn {
     padding: 17px 32px;
-
-    color: $cDarkWhite;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 14px;
-
-    background: $cLightBlue;
     border-radius: 12px;
+    background: $cLightBlue;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 14px;
+    color: $cDarkWhite;
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       padding: 16px 24px;
-
       font-size: 14px;
     }
   }

@@ -4,7 +4,7 @@
       :class="$style.form"
       @submit.prevent="create"
     >
-      <AddPhoto
+      <TheAddPhoto
         @changed-img="setImg"
         :class="$style.addPhoto"
       />
@@ -17,7 +17,7 @@
       <input
         type="text"
         :class="$style.input"
-        v-model="form.desc"
+        v-model="form.description"
         placeholder="Description"
       >
       <span :class="[$style.inputWrap, $style.input]">
@@ -59,7 +59,7 @@
       return {
         form: {
           name: '',
-          desc: '',
+          description: '',
           rent: '',
         },
         fileImg: null,
@@ -112,7 +112,7 @@
               });
 
             this.form.name = '';
-            this.form.desc = '';
+            this.form.description = '';
             this.form.rent = '';
             this.fileImg = null;
             this.urlImg = null;
@@ -155,7 +155,7 @@
     width: 100%;
     margin-bottom: 24px;
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       max-height: 260px;
     }
   }
@@ -163,7 +163,7 @@
   .input {
     margin-bottom: 24px;
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       margin-bottom: 16px;
     }
   }
@@ -171,18 +171,14 @@
   .submit {
     margin-top: 16px;
     padding: 21px 0;
-
     color: $cDarkWhite;
     font-weight: bold;
     font-size: 16px;
     line-height: 14px;
-
-    background: $cLightBlue;
     border-radius: $rInput;
+    background: $cLightBlue;
 
-
-
-    @include media(mobile){
+    @include respond-to(mobile) {
       margin-top: 8px;
       margin-bottom: 50px;
     }
@@ -190,7 +186,6 @@
 
   .inputWrap {
     position: relative;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -206,16 +201,13 @@
     position: absolute;
     right: 15px;
     z-index: 2;
-
     padding: 10px;
-
     font-size: 16px;
     line-height: 14px;
     color: $cGrey2;
-
   }
 
   .error {
-    color: $cDarkBlue;
+    color: var(--color-secondary);
   }
 </style>

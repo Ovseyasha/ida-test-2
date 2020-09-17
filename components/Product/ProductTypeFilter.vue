@@ -78,43 +78,38 @@
     line-height: 120%;
     color: var(--color);
 
-    @include media(tablet){
+    @include respond-to(mobile-l) {
       font-size: 24px;
     }
 
-    @include media(smallMobile){
+    @include respond-to(mobile-xs) {
       font-size: 18px;
     }
   }
 
   .selectHeader {
     padding-left: 20px;
-
     font-weight: bold;
     font-size: 40px;
     line-height: 120%;
     color: $cLightBlue;
 
-    @include media(tablet){
+    @include respond-to(mobile-l) {
       font-size: 24px;
     }
 
-    @include media(smallMobile){
+    @include respond-to(mobile-xs) {
       padding-left: 10px;
-
       font-size: 18px;
     }
 
     &:after {
+      content: url("/img/arrow.svg");
       position: relative;
       bottom: 8px;
-
       margin-left: 10px;
 
-      content: url("/img/arrow.svg");
-
-
-      @include media(tablet){
+      @include respond-to(mobile-l) {
         bottom: 2px;
       }
     }
@@ -128,24 +123,19 @@
   .select {
     position: absolute;
     top: 0;
-
     width: 100%;
     height: 100%;
-
+    border: none;
+    outline: none;
+    background: none;
     font-weight: bold;
     font-size: 14px;
     line-height: 120%;
     color: $cLightBlue;
-
-    background: none;
-    border: none;
     opacity: 0;
-    outline: none;
 
-    @include media(tablet){
+    @include respond-to(mobile-l) {
       padding-left: 10px;
-
-      font-size: 24px;
     }
   }
 

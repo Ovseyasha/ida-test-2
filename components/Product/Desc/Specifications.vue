@@ -53,7 +53,6 @@
 
   .header {
     margin: 32px 0;
-
     font-style: normal;
     font-size: 24px;
     line-height: 21px;
@@ -79,11 +78,10 @@
     height: 32px;
     padding: 24px;
     margin-right: 24px;
-
-    background: var(--bg-secondary);
     border-radius: 16px;
+    background: var(--bg-secondary);
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       width: 48px;
       height: 48px;
     }

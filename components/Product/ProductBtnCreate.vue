@@ -37,20 +37,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     font-size: 20px;
     font-weight: bold;
     line-height: 140%;
     color: $cLightBlue;
 
-    @include media(mobile){
+    @include respond-to(mobile){
       font-size: 16px;
     }
 
   }
 
   .head{
-    @include media(smallMobile){
+    @include respond-to(mobile-xs) {
       display: none;
     }
   }
@@ -62,17 +61,15 @@
     width: 47px;
     height: 47px;
     margin-left: 20px;
-
+    border-radius: 16px;
+    background: $cLightBlue;
     color: $cDarkWhite;
 
-    background: $cLightBlue;
-    border-radius: 16px;
 
-    @include media(mobile){
+    @include respond-to(mobile){
       width: 32px;
       height: 32px;
       margin-left: 10px;
-
       border-radius: 8px;
     }
   }

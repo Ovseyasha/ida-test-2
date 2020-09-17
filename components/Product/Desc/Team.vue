@@ -73,7 +73,7 @@
       justify-content: space-evenly;
     }
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       flex-direction: column;
     }
 
@@ -84,19 +84,18 @@
     flex-direction: column;
     justify-content: space-between;
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       flex-direction: row;
       justify-content: flex-start;
     }
 
     .avatar {
-      height: 96px;
       width: 162px;
+      height: 96px;
       margin: 0 4px 16px 0;
-
       border-radius: 12px;
 
-      @include media(mobile){
+      @include respond-to(mobile) {
         width: 132px;
         height: 80px;
       }
@@ -109,7 +108,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       justify-content: center;
       margin-left: 16px;
     }
@@ -118,19 +117,17 @@
 
   .header {
     margin: 32px 0;
-
     font-size: 24px;
-    line-height: 21px;
     font-weight: bold;
+    line-height: 21px;
     color: var(--color);
   }
 
   .name {
     font-size: 16px;
-    line-height: 14px;
     font-weight: bold;
+    line-height: 14px;
     color: var(--color);
-
   }
 
   .desc {
@@ -140,7 +137,6 @@
 
   .desc {
     padding-bottom: 40px;
-
     font-style: normal;
     font-size: 14px;
     line-height: 146%;

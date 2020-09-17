@@ -49,7 +49,7 @@
   export default {
     name: 'Modal',
     components: {
-      'ProductFormCreate': () => import('@/components/Product/FormCreate'),
+      'ProductFormCreate': () => import('@/components/Product/ProductFormCreate'),
     },
 
     props: {
@@ -100,7 +100,7 @@
     align-items: center;
     margin-bottom: 40px;
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       margin-bottom: 24px;
     }
 
@@ -113,7 +113,7 @@
     color: var(--color);
 
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       font-size: 24px;
     }
   }
@@ -124,14 +124,12 @@
     align-items: center;
     width: 48px;
     height: 48px;
-
-    background: var(--bg-secondary);
     border-radius: 16px;
+    background: var(--bg-secondary);
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       width: 32px;
       height: 32px;
-
       border-radius: 8px;
     }
 
@@ -143,40 +141,34 @@
     bottom: 0;
     right: 0;
     z-index: 999;
-
     width: 600px - 72px * 2;
     padding: 64px 72px;
-
-    background: var(--bg);
     border-top-left-radius: $rLg;
     border-bottom-left-radius: $rLg;
+    background: var(--bg);
 
-
-    @include media(tablet){
+    @include respond-to(mobile-l) {
       width: calc(100% - 72px * 2);
     }
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       bottom: 0;
-
-      height: 100%;
       width: calc(100% - 16px * 2);
+      height: 100%;
+      overflow: auto;
       padding: 24px 16px 32px 16px;
-
       border-radius: 0;
 
-      overflow: auto;
       @media (min-height: 750px) {
         height: 100vh;
         margin-top: 20%;
-
         border-radius: 24px 24px 0 0;
       }
     }
 
   }
 
-  .svg{
+  .svg {
     width: 14px;
     height: 14px;
   }
@@ -188,7 +180,6 @@
     right: 0;
     bottom: 0;
     z-index: 998;
-
     background: rgba(52, 79, 106, 0.32);
     backdrop-filter: blur(32px);
   }

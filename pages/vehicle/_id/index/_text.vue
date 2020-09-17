@@ -43,8 +43,8 @@
 
   .text {
     font-style: normal;
-    font-weight: 300;
     font-size: 14px;
+    font-weight: 300;
     line-height: 146%;
     color: var(--color-secondary);
   }

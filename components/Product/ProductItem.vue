@@ -48,18 +48,15 @@
     display: flex;
     width: 100%;
     padding: 24px 32px;
-
-
-    background: var(--bg);
     border-radius: $rProductLg;
-
+    background: var(--bg);
     transition: all .3s ease;
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       border-radius: $rXs;
     }
 
-    @include media(smallMobile){
+    @include respond-to(mobile-xs) {
       padding: 18px 8%;
     }
 
@@ -68,13 +65,11 @@
   .img {
     width: 88px;
     height: 88px;
+    object-fit: cover;
     margin-bottom: 52px - 32px;
-
     border-radius: $rImg;
 
-    object-fit: cover;
-
-    @include media(smallMobile){
+    @include respond-to(mobile-xs) {
       margin-bottom: 3%;
     }
   }
@@ -85,14 +80,13 @@
     justify-content: center;
     margin-left: 24px;
 
-    @include media(smallMobile){
+    @include respond-to(mobile-xs) {
       margin-left: 8%;
     }
   }
 
   .name {
     margin: 10px 0 12px 0;
-
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -103,7 +97,6 @@
   .desc {
     min-width: 150px;
     margin-bottom: 16px;
-
     font-style: normal;
     font-weight: 300;
     font-size: 12px;

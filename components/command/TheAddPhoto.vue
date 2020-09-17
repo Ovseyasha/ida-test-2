@@ -73,30 +73,26 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-
-    background: var(--bg-secondary);
     border-radius: $rImg;
+    background: var(--bg-secondary);
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       border-radius: 16px;
     }
   }
 
   .img {
     max-width: 100%;
-
     object-fit: cover;
   }
 
   .btn {
     position: absolute;
-
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 12px;
-
-    background: var(--bg);
     border-radius: 16px;
+    background: var(--bg);
   }
 </style>

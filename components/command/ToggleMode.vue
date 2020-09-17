@@ -1,11 +1,13 @@
 <template>
   <div :class="$style.ToggleMode">
-    <button :class="$style.button" @click="toggle">
-      <svg-icon :name="iconName" />
-      <span :class="$style.text">
+    <div :class="$style.wrapper">
+      <button :class="$style.button" @click="toggle">
+        <svg-icon :name="iconName" />
+        <span :class="$style.text">
         {{text}}
       </span>
-    </button>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -46,12 +48,11 @@
 
   .text {
     margin-left: 16px;
-
     font-size: 16px;
     line-height: 152%;
     color: var(--color-secondary);
 
-    @include media(desktop){
+    @include respond-to(tablet){
       display: none;
     }
   }

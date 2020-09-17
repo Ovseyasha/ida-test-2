@@ -29,7 +29,7 @@
   .content {
     padding-top: 50px;
 
-    @include media(mobile){
+    @include respond-to(mobile) {
       padding-top: 25px;
     }
   }
